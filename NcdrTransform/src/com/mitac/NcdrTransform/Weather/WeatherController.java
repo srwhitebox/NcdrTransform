@@ -73,6 +73,7 @@ public class WeatherController {
 		return SDF.format(newDate).toString();
 		//return newDate.toString();
 	}
+	//歷史資料2017以前
 	public void UpdateThing() {
 		//get weather update stid array
 		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
@@ -190,6 +191,8 @@ public class WeatherController {
 							//System.out.println(DataStreamIdMaps);
 							// --- get datastream id end ---
 						}
+					}else{
+						System.out.println("there is no sensor");
 					}
 				}
 			}

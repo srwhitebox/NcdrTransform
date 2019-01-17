@@ -45,11 +45,11 @@ public class NewTestForEd {
 //				for(int j=0;j<GetJsonArr.size();j++) {
 //					tmp = JSONObject.fromObject(GetJsonArr.get(j));
 //					if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
-//						System.out.println("¦³³á");
+//						System.out.println("ï¿½ï¿½ï¿½ï¿½");
 //						break;
 //					}
 //				}
-//				System.out.println("µ²§ô");
+//				System.out.println("ï¿½ï¿½ï¿½ï¿½");
 //				System.out.println(tmpSplitCol[1]);
 //				System.out.println("Weather Update size: "+(TmpList.size()-1));
 				

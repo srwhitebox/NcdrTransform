@@ -1,7 +1,11 @@
 package com.mitac.NcdrTransform.methods;
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -24,7 +28,7 @@ public class GetMethod {
 	public JSONObject doGetJson(){
         try {
         	InputStream is = new URL(Url).openStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is,"utf-8")); //�קK����ýX���D
+            BufferedReader br = new BufferedReader(new InputStreamReader(is,"utf-8")); //避免中文亂碼問題
             StringBuilder sb = new StringBuilder();
             int cp;
             while ((cp = br.read()) != -1) {
@@ -95,4 +99,26 @@ public class GetMethod {
 			return null;
 		}
 	}
+	
+	public List<String> doGetStrList_2018(){
+        try {
+        	List<String> ResList = new ArrayList<>();
+   		 String CurrentLine;
+   		 DataInputStream in = 
+   				 new DataInputStream(
+   						 new FileInputStream(
+   								 new File("C:\\NCDR_history\\weather\\Metro_2018\\201803_10.csv")));
+   		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"utf-8"));
+   		 while ((CurrentLine = br.readLine()) != null) {
+   		 ResList.add(CurrentLine);
+   		 }
+		 in.close();
+            return ResList;
+        }
+        catch (IOException ex) {
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
 }

@@ -1,9 +1,13 @@
 package test;
 
 import java.io.BufferedReader;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.net.URLEncoder;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -214,40 +218,68 @@ public class ReadText {
 
 	public static void main(String[] args) throws IOException, ParseException {
 		// TODO Auto-generated method stub
-		// 讀寫檔案用
-		// List<String> ResList = new ArrayList<>();
-		// String CurrentLine;
-		// boolean Filter_data = false;
-		// int i = 0;
-		// FileReader fr = new
-		// FileReader("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");
-		// BufferedReader br = new BufferedReader(fr);
-		// //FileWriter fw = new
-		// FileWriter("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");
-		// while ((CurrentLine = br.readLine()) != null) {
-		// if(CurrentLine.contains("# stno")){
-		// Filter_data = true;
-		// //System.out.println(CurrentLine);
-		// }
-		// if(Filter_data == true){
-		// ResList.add(CurrentLine);
-		// }
-		//
-		// //System.out.println(CurrentLine);
-		// // fw.write(br.readLine()+"\n");
-		//// i++;
-		//// if(i>10){
-		//// break;
-		//// }
-		// }
-		// //fw.flush();
-		// //fw.close();
-		// fr.close();
+//		//讀寫檔案用(CSV)
+//		 List<String> ResList = new ArrayList<>();
+//		 String CurrentLine;
+//		 boolean Filter_data = false;
+//		 int i = 0;
+//		 //FileReader fr = new FileReader("C:\\NCDR_history\\weather\\Metro_2018\\201803.csv");
+//		 DataInputStream in = new DataInputStream(new FileInputStream(new File("C:\\NCDR_history\\weather\\Metro_2018\\201807.csv")));
+//		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"ms950"));
+//		 FileWriter fw = new FileWriter("C:\\NCDR_history\\weather\\Metro_2018\\201803_10.csv");
+//		 while ((CurrentLine = br.readLine()) != null) {
+//		 System.out.println(CurrentLine);
+//		 ResList.add(CurrentLine);
+//		 fw.write(CurrentLine+"\n");
+//		 i++;
+//		 if(i>10){
+//			 break;
+//		 }
+//		 }
+		 
+		 //讀寫檔案用(txt)
+		 //FileWriter fw = new FileWriter("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");
+		 //while ((CurrentLine = br.readLine()) != null) {
+		 //if(CurrentLine.contains("# stno")){
+		 //Filter_data = true;
+		 //System.out.println(CurrentLine);
+		 //}
+		 //if(Filter_data == true){
+		 //ResList.add(CurrentLine);
+		 //}
+		
+		 //System.out.println(CurrentLine);
+		 //fw.write(br.readLine()+"\n");
+		 //i++;
+		 //if(i>10){
+		 //break;
+		 //}
+		 //}
+//		 fw.flush();
+//		 fw.close();
+//		 //br.close();
+//		 in.close();
+		
+		//測試讀檔函式(CSV)
+		GetMethod Get = new GetMethod();
+		List<String> ResList = Get.doGetStrList_2018();
+		String[] tmpSplitCol = ResList.get(1).split(",");
+		System.out.println("長度為："+tmpSplitCol.length);
+		for(int i=0; i<tmpSplitCol.length; i++){
+			tmpSplitCol[i] = tmpSplitCol[i].replace("\"", "");
+			if(tmpSplitCol[i].trim().isEmpty()){
+				//System.out.println("空的");
+				tmpSplitCol[i] = "0";
+			}
+			System.out.println(tmpSplitCol[i]);
+		}
+		
+		System.out.println(tmpSplitCol[2]);
 		
 //		//測試日期轉換
-		GetMethod Get = new GetMethod();
-		List<String> ResList = Get.doGetStrList_2();
-		String[] tmpSplitCol = ResList.get(1).split(",");
+//		GetMethod Get = new GetMethod();
+//		List<String> ResList = Get.doGetStrList_2();
+//		String[] tmpSplitCol = ResList.get(1).split(",");
 //		System.out.println(tmpSplitCol[0]);
 //		WeatherController wc = new WeatherController();
 //		tmpSplitCol[1] = wc.DateFormat_yyyymmddhh(tmpSplitCol[1]);
@@ -270,8 +302,8 @@ public class ReadText {
 //		ThingName = URLEncoder.encode(ThingName,"UTF-8");
 //		System.out.println(ThingName);
 		
-//		//測試POST_THING檔案
-//		 setPostThingObject("555","555","555","555","555","555","555","555","555","555","555","555","555","555","555","555");
+		//測試POST_THING檔案
+//		 setPostThingObject("777","777","775","777","777","777","777","777","777","777","777","777","7","0","0","0");
 //		 System.out.println(PostThingObject);
 //		// System.out.println(ResList.get(1));
 		
@@ -281,9 +313,11 @@ public class ReadText {
 //		for(int i=0; i<Date_addT.length; i++){
 //			System.out.println(Date_addT[i]);
 //		}
-		WeatherController wc = new WeatherController();
-		tmpSplitCol[1] = wc.DateFormat_yyyymmddhh("2002010124");
-		System.out.println(tmpSplitCol[1]);
+		
+//		//測試日期換日加一天
+//		WeatherController wc = new WeatherController();
+//		tmpSplitCol[1] = wc.DateFormat_yyyymmddhh("2002010124");
+//		System.out.println(tmpSplitCol[1]);
 //		String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
 //		String PS01 = tmpSplitCol[2];
 //		String TX01 = tmpSplitCol[3];

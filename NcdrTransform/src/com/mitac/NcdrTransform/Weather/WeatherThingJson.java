@@ -3,6 +3,7 @@ package com.mitac.NcdrTransform.Weather;
 public class WeatherThingJson {
 	private String PostThingObject;
 	private String PostThingObject_old;
+	private String PostThingObject_txt;
 	private String UpdateObject;
 	public WeatherThingJson() {
 		
@@ -16,8 +17,583 @@ public class WeatherThingJson {
 	public String getUpdateObject() {
 		return UpdateObject;
 	}
-	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String PS01,String TX01,String RH01,String WD01,String WD02,String SS01){
+	
+	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,
+			String OB01,String OB02,String OB03,String OB04,String OB05,String OB06,String OB07,String OB08,String OB09,String OB10,
+			String OB11,String OB12,String OB13,String OB14,String OB15,String OB16,String OB17,String OB18,String OB19,String OB20){
 		PostThingObject="{\r\n" + 
+				"\"name\": \"氣象站_old-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"properties\": {\r\n" + 
+				"\"stationID\":\""+STID+"\",\r\n" + 
+				"\"stationName\":\""+STNM+"\",\r\n" + 
+				"\"areaDescription\":\""+CityName+TownName+"\",\r\n" + 
+				"\"city_SN\":\""+City_SN+"\",\r\n" + 
+				"\"town_SN\":\""+Town_SN+"\",\r\n" + 
+				"\"Attribute\":\""+Attribute+"\"\r\n" + 
+				"},\r\n" + 
+				"\"Locations\": [\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
+				"\"location\": {\r\n" + 
+				"\"type\": \"Point\",\r\n" + 
+				"\"coordinates\": [\r\n" + 
+				""+LON+",\r\n" + 
+				""+LAT+"\r\n" + 
+				"]\r\n" + 
+				"}\r\n" + 
+				"}\r\n" + 
+				"],\r\n" + 
+				"\"Datastreams\": [\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-風速\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-風速\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"meter per second\",\r\n" + 
+				"\"symbol\": \"m/s\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-風速\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-風速\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB01+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-風向\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-風向\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"degree\",\r\n" + 
+				"\"symbol\": \"°\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-風向\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-風向\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB02+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-濕度\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-濕度\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"百分比率0-1\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-濕度\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-濕度\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB03+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-氣壓\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-氣壓\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"hPa\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-氣壓\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-氣壓\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB04+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-氣溫\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-氣溫\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"degree\",\r\n" + 
+				"\"symbol\": \"°\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-氣溫\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-氣溫\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB05+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-紫外線指數\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-紫外線指數\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-紫外線指數\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-紫外線指數\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB06+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-日累積雨量\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日累積雨量\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-日累積雨量\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-日累積雨量\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB07+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-日最高溫度\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日最高溫度\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"degree\",\r\n" + 
+				"\"symbol\": \"°\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-日最高溫度\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-日最高溫度\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB08+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-日最高溫度發生時間\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日最高溫度發生時間\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"hhmm\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-日最高溫度發生時間\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-日最高溫度發生時間\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB09+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-日最低溫度\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日最低溫度\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-日最低溫度\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-日最低溫度\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB10+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-日最低溫度發生時間\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日最低溫度發生時間\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"hhmm\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-日最低溫度發生時間\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-日最低溫度發生時間\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB11+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-日照時數\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日照時數\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-日照時數\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-日照時數\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB12+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-小時極大風速\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-小時極大風速\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"meter per second\",\r\n" + 
+				"\"symbol\": \"m/s\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-小時極大風速\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-小時極大風速\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB13+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-小時極大風向\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-小時極大風向\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"degree\",\r\n" + 
+				"\"symbol\": \"°\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-小時極大風向\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-小時極大風向\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB14+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-小時極大風速發生時間\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-小時極大風速發生時間\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"hhmm\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-小時極大風速發生時間\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-小時極大風速發生時間\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB15+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-小時最大10分鐘平均風速\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-小時最大10分鐘平均風速\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"meter per second\",\r\n" + 
+				"\"symbol\": \"m/s\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-小時最大10分鐘平均風速\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-小時最大10分鐘平均風速\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB16+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-小時最大10分鐘平均風向\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-小時最大10分鐘平均風向\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"degree\",\r\n" + 
+				"\"symbol\": \"°\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-小時最大10分鐘平均風向\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-小時最大10分鐘平均風向\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB17+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-小時最大10分鐘平均風速發生時間\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-小時最大10分鐘平均風速發生時間\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"hhmm\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"小時最大10分鐘平均風速發生時間\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-小時最大10分鐘平均風速發生時間\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB18+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-能見度\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-能見度\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"kilometer\",\r\n" + 
+				"\"symbol\": \"km\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-能見度\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-能見度\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB19+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"氣象站-"+STID+"-日累積全天空日輻射\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日累積全天空日輻射\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"MJ/m2\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"氣象站-日累積全天空日輻射\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-氣象資訊-日累積全天空日輻射\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+OB20+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"}\r\n" + 
+				"";
+	}
+	
+	public void setPostThingObject_txt(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String PS01,String TX01,String RH01,String WD01,String WD02,String SS01){
+		PostThingObject_txt="{\r\n" + 
 				"\"name\": \"氣象站_old-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"氣象站-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
@@ -209,6 +785,7 @@ public class WeatherThingJson {
 				"}\r\n" + 
 				"";
 	}
+	
 	public void setPostThingObject_old(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String WDIR,String WDSD,String TEMP,String HUMD,String PRES,String SUN,String H_24R,String Elev,String WS15M,String WD15M,String WS15T) {
 		PostThingObject_old="{\r\n" + 
 				"\"name\": \"氣象站-"+STID+"-"+STNM+"\",\r\n" + 

@@ -40,7 +40,7 @@ public class RainfallController {
 			JSONObject tmp = JSONObject.fromObject(GetJsonArr.get(i));//from ncdr
 			String Stid = tmp.getString("STID");
 			String Stnm = tmp.getString("STNM");
-			String ThingName = "«B¶q¯¸-"+Stid+"-"+Stnm;
+			String ThingName = "é›¨é‡ç«™-"+Stid+"-"+Stnm;
 			//System.out.println(ThingName);
 			try {
 				ThingName = URLEncoder.encode(ThingName,"UTF-8");

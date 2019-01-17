@@ -40,7 +40,7 @@ public class CctvController {
 //			JSONObject tmp = JSONObject.fromObject(GetJsonArr.get(i));//from ncdr
 //			String Stid = tmp.getString("STID");
 //			String Stnm = tmp.getString("STNM");
-//			String ThingName = "§Ù¶ÏØ∏-"+Stid+"-"+Stnm;
+//			String ThingName = "Ê∞¥‰ΩçÁ´ô-"+Stid+"-"+Stnm;
 //			//System.out.println(ThingName);
 //			try {
 //				ThingName = URLEncoder.encode(ThingName,"UTF-8");

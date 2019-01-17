@@ -9,7 +9,7 @@ import com.mitac.NcdrTransform.CCTV.*;
 public class TransformMain {
 
 	public static void main(String[] args) {
-		String UsageStr = "Usage: java -jar NcdrTransform.jar [MainClass] [SensorthingServerUrl] [Option] [DataType]\nOption:\n-C, To create Things.\n-U, To update observations.\n\nDataType:\n¥ş³¡¸ê®Æ:ALL,\nCCTV:CCTV,\n¤ô¦ì¯¸:WaterLevel,\n«B¶q¯¸:Rainfall,\n®ğ¶H¯¸:Weather";
+		String UsageStr = "Usage: java -jar NcdrTransform.jar [MainClass] [SensorthingServerUrl] [Option] [DataType]\nOption:\n-C, To create Things.\n-U, To update observations.\n\nDataType:\nå…¨éƒ¨è³‡æ–™:ALL,\nCCTV:CCTV,\næ°´ä½ç«™:WaterLevel,\né›¨é‡ç«™:Rainfall,\næ°£è±¡ç«™:Weather";
 		if(args.length<4) {
 			System.out.println(UsageStr);
 			return;

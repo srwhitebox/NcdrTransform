@@ -2,6 +2,7 @@ package com.mitac.NcdrTransform.Weather;
 
 public class WeatherThingJson {
 	private String PostThingObject;
+	private String PostThingObject_old;
 	private String UpdateObject;
 	public WeatherThingJson() {
 		
@@ -15,10 +16,10 @@ public class WeatherThingJson {
 	public String getUpdateObject() {
 		return UpdateObject;
 	}
-	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String WDIR,String WDSD,String TEMP,String HUMD,String PRES,String SUN,String H_24R,String Elev,String WS15M,String WD15M,String WS15T) {
+	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String PS01,String TX01,String RH01,String WD01,String WD02,String SS01){
 		PostThingObject="{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-"+STNM+"\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô_old-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\":\""+STID+"\",\r\n" + 
 				"\"stationName\":\""+STNM+"\",\r\n" + 
@@ -29,8 +30,8 @@ public class WeatherThingJson {
 				"},\r\n" + 
 				"\"Locations\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
 				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
 				"\"location\": {\r\n" + 
 				"\"type\": \"Point\",\r\n" + 
@@ -43,197 +44,8 @@ public class WeatherThingJson {
 				"],\r\n" + 
 				"\"Datastreams\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-WDIR\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-WDIR(≠∑¶V)\",\r\n" + 
-				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
-				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"degrees\",\r\n" + 
-				"\"symbol\": \"¢X\",\r\n" + 
-				"\"definition\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
-				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-WDIR\",\r\n" + 
-				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T WDIR\"\r\n" + 
-				"},\r\n" + 
-				"\"Observations\": [\r\n" + 
-				"{\r\n" + 
-				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
-				"\"result\":"+WDIR+"\r\n" + 
-				"}\r\n" + 
-				"]\r\n" + 
-				"},\r\n" + 
-				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-WDSD\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-WDSD(≠∑≥t)\",\r\n" + 
-				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
-				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"meter per second\",\r\n" + 
-				"\"symbol\": \" m/s\",\r\n" + 
-				"\"definition\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
-				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-WDSD\",\r\n" + 
-				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T WDSD\"\r\n" + 
-				"},\r\n" + 
-				"\"Observations\": [\r\n" + 
-				"{\r\n" + 
-				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
-				"\"result\":"+WDSD+"\r\n" + 
-				"}\r\n" + 
-				"]\r\n" + 
-				"},\r\n" + 
-				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-TEMP\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-TEMP(∑≈´◊)\",\r\n" + 
-				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
-				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"Celsius\",\r\n" + 
-				"\"symbol\": \"¢XC\",\r\n" + 
-				"\"definition\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
-				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-TEMP\",\r\n" + 
-				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T TEMP\"\r\n" + 
-				"},\r\n" + 
-				"\"Observations\": [\r\n" + 
-				"{\r\n" + 
-				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
-				"\"result\":"+TEMP+"\r\n" + 
-				"}\r\n" + 
-				"]\r\n" + 
-				"},\r\n" + 
-				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-HUMD\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-HUMD(¨€πÔ∑√´◊)\",\r\n" + 
-				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
-				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"percentage\",\r\n" + 
-				"\"symbol\": \"%\",\r\n" + 
-				"\"definition\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
-				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-HUMD\",\r\n" + 
-				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T HUMD\"\r\n" + 
-				"},\r\n" + 
-				"\"Observations\": [\r\n" + 
-				"{\r\n" + 
-				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
-				"\"result\":"+HUMD+"\r\n" + 
-				"}\r\n" + 
-				"]\r\n" + 
-				"},\r\n" + 
-				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-PRES\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-PRES(Æ¿£)\",\r\n" + 
-				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
-				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"hectopascal\",\r\n" + 
-				"\"symbol\": \"hPa\",\r\n" + 
-				"\"definition\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
-				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-PRES\",\r\n" + 
-				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T PRES\"\r\n" + 
-				"},\r\n" + 
-				"\"Observations\": [\r\n" + 
-				"{\r\n" + 
-				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
-				"\"result\":"+PRES+"\r\n" + 
-				"}\r\n" + 
-				"]\r\n" + 
-				"},\r\n" + 
-				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-SUN\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-SUN(§È∑”Æ…º∆)\",\r\n" + 
-				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
-				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"hour\",\r\n" + 
-				"\"symbol\": \"h\",\r\n" + 
-				"\"definition\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
-				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-SUN\",\r\n" + 
-				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T SUN\"\r\n" + 
-				"},\r\n" + 
-				"\"Observations\": [\r\n" + 
-				"{\r\n" + 
-				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
-				"\"result\":"+SUN+"\r\n" + 
-				"}\r\n" + 
-				"]\r\n" + 
-				"},\r\n" + 
-				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-H_24R\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-H_24R(§È≤÷øn´B∂q)\",\r\n" + 
-				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
-				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"millimeter\",\r\n" + 
-				"\"symbol\": \"mm\",\r\n" + 
-				"\"definition\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
-				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NA\"\r\n" + 
-				"},\r\n" + 
-				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-H_24R\",\r\n" + 
-				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T H_24R\"\r\n" + 
-				"},\r\n" + 
-				"\"Observations\": [\r\n" + 
-				"{\r\n" + 
-				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
-				"\"result\":"+H_24R+"\r\n" + 
-				"}\r\n" + 
-				"]\r\n" + 
-				"},\r\n" + 
-				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-Elev\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-Elev(¶a™Ì∞_∫‚∞™µ{)\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-PS01\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-PS01\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"NA\",\r\n" + 
@@ -247,9 +59,391 @@ public class WeatherThingJson {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-Elev\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-PS01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T Elev\"\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®äPS01\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+PS01+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-TX01\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-TX01\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \" NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-TX01\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®äTX01\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+TX01+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-RH01\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-RH01(Áõ∏Â∞çÊøïÂ∫¶)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"percentage\",\r\n" + 
+				"\"symbol\": \"%\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-RH01\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®äRH01\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+RH01+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-WD01\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-WD01\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-WD01\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®äWD01\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+WD01+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-WD02\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-WD02(Âπ≥ÂùáÈ¢®È¢®Âêë)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"degree\",\r\n" + 
+				"\"symbol\": \"¬∞\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-WD02\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®äWD02\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+WD02+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-SS01\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-SS01\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-SS01\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®äSS01\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+SS01+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"}\r\n" + 
+				"";
+	}
+	public void setPostThingObject_old(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String WDIR,String WDSD,String TEMP,String HUMD,String PRES,String SUN,String H_24R,String Elev,String WS15M,String WD15M,String WS15T) {
+		PostThingObject_old="{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"properties\": {\r\n" + 
+				"\"stationID\":\""+STID+"\",\r\n" + 
+				"\"stationName\":\""+STNM+"\",\r\n" + 
+				"\"areaDescription\":\""+CityName+TownName+"\",\r\n" + 
+				"\"city_SN\":\""+City_SN+"\",\r\n" + 
+				"\"town_SN\":\""+Town_SN+"\",\r\n" + 
+				"\"Attribute\":\""+Attribute+"\"\r\n" + 
+				"},\r\n" + 
+				"\"Locations\": [\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
+				"\"location\": {\r\n" + 
+				"\"type\": \"Point\",\r\n" + 
+				"\"coordinates\": [\r\n" + 
+				""+LON+",\r\n" + 
+				""+LAT+"\r\n" + 
+				"]\r\n" + 
+				"}\r\n" + 
+				"}\r\n" + 
+				"],\r\n" + 
+				"\"Datastreams\": [\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-WDIR\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-WDIR(È¢®Âêë)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"degrees\",\r\n" + 
+				"\"symbol\": \"¬∞\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-WDIR\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä WDIR\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+WDIR+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-WDSD\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-WDSD(È¢®ÈÄü)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"meter per second\",\r\n" + 
+				"\"symbol\": \" m/s\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-WDSD\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä WDSD\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+WDSD+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-TEMP\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-TEMP(Ê∫´Â∫¶)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"Celsius\",\r\n" + 
+				"\"symbol\": \"¬∞C\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-TEMP\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä TEMP\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+TEMP+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-HUMD\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-HUMD(Áõ∏Â∞çÊ∫ºÂ∫¶)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"percentage\",\r\n" + 
+				"\"symbol\": \"%\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-HUMD\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä HUMD\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+HUMD+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-PRES\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-PRES(Ê∞£Â£ì)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"hectopascal\",\r\n" + 
+				"\"symbol\": \"hPa\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-PRES\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä PRES\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+PRES+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-SUN\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-SUN(Êó•ÁÖßÊôÇÊï∏)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"hour\",\r\n" + 
+				"\"symbol\": \"h\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-SUN\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä SUN\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+SUN+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-H_24R\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-H_24R(Êó•Á¥ØÁ©çÈõ®Èáè)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"millimeter\",\r\n" + 
+				"\"symbol\": \"mm\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-H_24R\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä H_24R\"\r\n" + 
+				"},\r\n" + 
+				"\"Observations\": [\r\n" + 
+				"{\r\n" + 
+				"\"phenomenonTime\": \""+RST_Date+"\",\r\n" + 
+				"\"result\":"+H_24R+"\r\n" + 
+				"}\r\n" + 
+				"]\r\n" + 
+				"},\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-Elev\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-Elev(Âú∞Ë°®Ëµ∑ÁÆóÈ´òÁ®ã)\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\": \"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR Database\",\r\n" + 
+				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-Elev\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä Elev\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -259,8 +453,8 @@ public class WeatherThingJson {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-WS15M\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-WS15M(∆[¥˙Æ…∂°´e±¿§Q§≠§¿ƒ¡§∫µo•Õ≥Ã§j≠∑™∫≠∑≥t)\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-WS15M\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-WS15M(ËßÄÊ∏¨ÊôÇÈñìÂâçÊé®ÂçÅ‰∫îÂàÜÈêòÂÖßÁôºÁîüÊúÄÂ§ßÈ¢®ÁöÑÈ¢®ÈÄü)\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"meter per second\",\r\n" + 
@@ -274,9 +468,9 @@ public class WeatherThingJson {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-WS15M\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-WS15M\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T WS15M\"\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä WS15M\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -286,12 +480,12 @@ public class WeatherThingJson {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-WD15M\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-WD15M(∆[¥˙Æ…∂°´e±¿§Q§≠§¿ƒ¡§∫µo•Õ≥Ã§j≠∑™∫≠∑¶V)\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-WD15M\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-WD15M(ËßÄÊ∏¨ÊôÇÈñìÂâçÊé®ÂçÅ‰∫îÂàÜÈêòÂÖßÁôºÁîüÊúÄÂ§ßÈ¢®ÁöÑÈ¢®Âêë)\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"degrees\",\r\n" + 
-				"\"symbol\": \"¢X\",\r\n" + 
+				"\"symbol\": \"¬∞\",\r\n" + 
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
@@ -301,9 +495,9 @@ public class WeatherThingJson {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-WD15M\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-WD15M\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T WD15M\"\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä WD15M\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -313,8 +507,8 @@ public class WeatherThingJson {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"Æ∂HØ∏-"+STID+"-WS15T\",\r\n" + 
-				"\"description\": \"Æ∂HØ∏-"+STID+"-WS15T(∆[¥˙Æ…∂°´e±¿§Q§≠§¿ƒ¡§∫µo•Õ≥Ã§j≠∑™∫µo•ÕÆ…∂°)\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-"+STID+"-WS15T\",\r\n" + 
+				"\"description\": \"Ê∞£Ë±°Á´ô-"+STID+"-WS15T(ËßÄÊ∏¨ÊôÇÈñìÂâçÊé®ÂçÅ‰∫îÂàÜÈêòÂÖßÁôºÁîüÊúÄÂ§ßÈ¢®ÁöÑÁôºÁîüÊôÇÈñì)\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"time\",\r\n" + 
@@ -328,9 +522,9 @@ public class WeatherThingJson {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"Æ∂HØ∏-WS15T\",\r\n" + 
+				"\"name\": \"Ê∞£Ë±°Á´ô-WS15T\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-Æ∂H∏Í∞T WS15T\"\r\n" + 
+				"\"description\": \"NCDR-Ê∞£Ë±°Ë≥áË®ä WS15T\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 

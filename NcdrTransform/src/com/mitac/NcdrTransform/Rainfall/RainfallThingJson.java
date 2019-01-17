@@ -18,8 +18,8 @@ public class RainfallThingJson {
 	}
 	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
 		PostThingObject="{\r\n" + 
-				"\"name\": \"«B¶q¯¸-"+STID+"-"+STNM+"\",\r\n" + 
-				"\"description\": \"«B¶q¯¸-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"description\": \"é›¨é‡ç«™-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\":\""+STID+"\",\r\n" + 
 				"\"stationName\":\""+STNM+"\",\r\n" + 
@@ -32,8 +32,8 @@ public class RainfallThingJson {
 				"},\r\n" + 
 				"\"Locations\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"«B¶q¯¸-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
-				"\"description\": \"«B¶q¯¸-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"description\": \"é›¨é‡ç«™-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
 				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
 				"\"location\": {\r\n" + 
 				"\"type\": \"Point\",\r\n" + 
@@ -45,8 +45,8 @@ public class RainfallThingJson {
 				"}],\r\n" + 
 				"\"Datastreams\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"«B¶q¯¸-"+STID+"-Hour_1\",\r\n" + 
-				"\"description\": \"«B¶q¯¸-"+STID+"-Hour_1\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-"+STID+"-Hour_1\",\r\n" + 
+				"\"description\": \"é›¨é‡ç«™-"+STID+"-Hour_1\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\":\"NA\",\r\n" + 
@@ -60,14 +60,14 @@ public class RainfallThingJson {
 				"\"metadata\": \"NCDR DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"«B¶q¯¸-Hour_1\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-Hour_1\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-1¤p®É«B¶q¸ê°T\"\r\n" + 
+				"\"description\":\"NCDR-1å°æ™‚é›¨é‡è³‡è¨Š\"\r\n" + 
 				"}"+ 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"«B¶q¯¸-"+STID+"-Hour_3\",\r\n" + 
-				"\"description\": \"«B¶q¯¸-"+STID+"-Hour_3\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-"+STID+"-Hour_3\",\r\n" + 
+				"\"description\": \"é›¨é‡ç«™-"+STID+"-Hour_3\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\":\"NA\",\r\n" + 
@@ -81,14 +81,14 @@ public class RainfallThingJson {
 				"\"metadata\": \"NCDR DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"«B¶q¯¸-Hour_3\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-Hour_3\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-3¤p®É«B¶q¸ê°T\"\r\n" + 
+				"\"description\":\"NCDR-3å°æ™‚é›¨é‡è³‡è¨Š\"\r\n" + 
 				"}"+
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"«B¶q¯¸-"+STID+"-Hour_24\",\r\n" + 
-				"\"description\": \"«B¶q¯¸-"+STID+"-Hour_24\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-"+STID+"-Hour_24\",\r\n" + 
+				"\"description\": \"é›¨é‡ç«™-"+STID+"-Hour_24\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\":\"NA\",\r\n" + 
@@ -102,9 +102,9 @@ public class RainfallThingJson {
 				"\"metadata\": \"NCDR DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"«B¶q¯¸-Hour_24\",\r\n" + 
+				"\"name\": \"é›¨é‡ç«™-Hour_24\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-24¤p®É«B¶q¸ê°T\"\r\n" + 
+				"\"description\":\"NCDR-24å°æ™‚é›¨é‡è³‡è¨Š\"\r\n" + 
 				"}"+ 
 				"}\r\n" + 
 				"]\r\n" + 

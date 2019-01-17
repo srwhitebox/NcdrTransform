@@ -1,6 +1,7 @@
 package com.mitac.NcdrTransform.methods;
 
 import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -16,10 +17,14 @@ public class GetMethod {
 		this.Url = Url;
 	}
 	
+	public GetMethod() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public JSONObject doGetJson(){
         try {
         	InputStream is = new URL(Url).openStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is,"utf-8")); //Á×§K¤¤¤å¶Ã½X°İÃD
+            BufferedReader br = new BufferedReader(new InputStreamReader(is,"utf-8")); //ï¿½×§Kï¿½ï¿½ï¿½ï¿½Ã½Xï¿½ï¿½ï¿½D
             StringBuilder sb = new StringBuilder();
             int cp;
             while ((cp = br.read()) != -1) {
@@ -39,13 +44,51 @@ public class GetMethod {
         try {
         	List<String> ResList = new ArrayList<>();
         	InputStream is = new URL(Url).openStream();
-            BufferedReader br = new BufferedReader(new InputStreamReader(is,"utf-8")); //Á×§K¤¤¤å¶Ã½X°İÃD
+            BufferedReader br = new BufferedReader(new InputStreamReader(is,"utf-8")); //é¿å…ä¸­æ–‡äº‚ç¢¼å•é¡Œ
             String CurrentLine;
             while ((CurrentLine = br.readLine()) != null) {
             	ResList.add(CurrentLine);
             }
             is.close();
             return ResList;
+        }
+        catch (IOException ex) {
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	public List<String> doGetStrList_2(){
+        try {
+        	List<String> ResList = new ArrayList<>();
+    		String CurrentLine;
+    		boolean Filter_data = false;
+    		//int i = 0;
+    		FileReader fr = new FileReader("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");
+    		BufferedReader br = new BufferedReader(fr);
+    		while ((CurrentLine = br.readLine()) != null) {
+    			if(CurrentLine.contains("# stno")){
+    				Filter_data = true;
+    			}
+    			if(Filter_data == true){
+    				ResList.add(CurrentLine);
+    			}
+    		}
+    		fr.close();
+    		List<String> tmpSplitCol = new ArrayList<>();
+    		String dataAdd = "";
+    		for (int j = 0; j < ResList.size(); j++) {
+    			String[] tmpSplitCol_full = ResList.get(j).split(" ");
+    			// System.out.println(tmpSplitCol_full[4].trim());
+    			for (String data : tmpSplitCol_full) {
+    				if (!data.trim().isEmpty() && !data.trim().equals("#")) {
+    					dataAdd = dataAdd + data + ",";
+    				}
+    			}
+    			tmpSplitCol.add(dataAdd.substring(0, dataAdd.length() - 1));
+    			dataAdd = "";
+    		}
+            return tmpSplitCol;
         }
         catch (IOException ex) {
 			ex.printStackTrace();

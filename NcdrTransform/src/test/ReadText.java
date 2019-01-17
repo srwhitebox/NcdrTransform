@@ -4,15 +4,24 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URLEncoder;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+import com.mitac.NcdrTransform.Weather.WeatherController;
+import com.mitac.NcdrTransform.methods.GetMethod;
 
 public class ReadText {
-	
+
 	public static String PostThingObject;
-	
+
 	public static void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String PS01,String TX01,String RH01,String WD01,String WD02,String SS01){
 		PostThingObject="{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-"+STNM+"\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\":\""+STID+"\",\r\n" + 
 				"\"stationName\":\""+STNM+"\",\r\n" + 
@@ -23,8 +32,8 @@ public class ReadText {
 				"},\r\n" + 
 				"\"Locations\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
 				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
 				"\"location\": {\r\n" + 
 				"\"type\": \"Point\",\r\n" + 
@@ -37,8 +46,8 @@ public class ReadText {
 				"],\r\n" + 
 				"\"Datastreams\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-PS01\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-PS01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-PS01\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-PS01\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"NA\",\r\n" + 
@@ -52,9 +61,9 @@ public class ReadText {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-PS01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-PS01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-®ğ¶H¸ê°TPS01\"\r\n" + 
+				"\"description\": \"NCDR-æ°£è±¡è³‡è¨ŠPS01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -64,8 +73,8 @@ public class ReadText {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-TX01\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-TX01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-TX01\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-TX01\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"NA\",\r\n" + 
@@ -79,9 +88,9 @@ public class ReadText {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-TX01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-TX01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-®ğ¶H¸ê°TTX01\"\r\n" + 
+				"\"description\": \"NCDR-æ°£è±¡è³‡è¨ŠTX01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -91,8 +100,8 @@ public class ReadText {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-RH01\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-RH01(¬Û¹ïÀã«×)\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-RH01\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-RH01(ç›¸å°æ¿•åº¦)\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"percentage\",\r\n" + 
@@ -106,9 +115,9 @@ public class ReadText {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-RH01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-RH01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-®ğ¶H¸ê°TRH01\"\r\n" + 
+				"\"description\": \"NCDR-æ°£è±¡è³‡è¨ŠRH01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -118,8 +127,8 @@ public class ReadText {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-WD01\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-WD01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-WD01\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-WD01\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"NA\",\r\n" + 
@@ -133,9 +142,9 @@ public class ReadText {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-WD01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-WD01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-®ğ¶H¸ê°TWD01\"\r\n" + 
+				"\"description\": \"NCDR-æ°£è±¡è³‡è¨ŠWD01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -145,12 +154,12 @@ public class ReadText {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-WD02\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-WD02(¥­§¡­·­·¦V)\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-WD02\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-WD02(å¹³å‡é¢¨é¢¨å‘)\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"degree\",\r\n" + 
-				"\"symbol\": \"¢X\",\r\n" + 
+				"\"symbol\": \"Â°\",\r\n" + 
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
@@ -160,9 +169,9 @@ public class ReadText {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-WD02\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-WD02\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-®ğ¶H¸ê°TWD02\"\r\n" + 
+				"\"description\": \"NCDR-æ°£è±¡è³‡è¨ŠWD02\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -172,8 +181,8 @@ public class ReadText {
 				"]\r\n" + 
 				"},\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-"+STID+"-SS01\",\r\n" + 
-				"\"description\": \"®ğ¶H¯¸-"+STID+"-SS01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-"+STID+"-SS01\",\r\n" + 
+				"\"description\": \"æ°£è±¡ç«™-"+STID+"-SS01\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"NA\",\r\n" + 
@@ -187,9 +196,9 @@ public class ReadText {
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"®ğ¶H¯¸-SS01\",\r\n" + 
+				"\"name\": \"æ°£è±¡ç«™-SS01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-®ğ¶H¸ê°TSS01\"\r\n" + 
+				"\"description\": \"NCDR-æ°£è±¡è³‡è¨ŠSS01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -203,26 +212,85 @@ public class ReadText {
 				"";
 	}
 
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, ParseException {
 		// TODO Auto-generated method stub
-//		int i = 0;
-//		FileReader fr = new FileReader("C:\\NCDR_history\\weather\\Metro_1998-2017.txt");
-//		BufferedReader br = new BufferedReader(fr);
-//		FileWriter fw = new FileWriter("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");
-//		while (br.ready()) {
-//			System.out.println(br.readLine());
-//			fw.write(br.readLine()+"\n");
-//			i++;
-//			if(i>100){
-//				break;
-//			}
-//		}
-//		fw.flush();
-//		fw.close();
-//		fr.close();
-		setPostThingObject("321","321","123213","321","321","321","321","321","321","321","123","123","321","321","321","321");
-		System.out.println(PostThingObject);
+		// è®€å¯«æª”æ¡ˆç”¨
+		// List<String> ResList = new ArrayList<>();
+		// String CurrentLine;
+		// boolean Filter_data = false;
+		// int i = 0;
+		// FileReader fr = new
+		// FileReader("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");
+		// BufferedReader br = new BufferedReader(fr);
+		// //FileWriter fw = new
+		// FileWriter("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");
+		// while ((CurrentLine = br.readLine()) != null) {
+		// if(CurrentLine.contains("# stno")){
+		// Filter_data = true;
+		// //System.out.println(CurrentLine);
+		// }
+		// if(Filter_data == true){
+		// ResList.add(CurrentLine);
+		// }
+		//
+		// //System.out.println(CurrentLine);
+		// // fw.write(br.readLine()+"\n");
+		//// i++;
+		//// if(i>10){
+		//// break;
+		//// }
+		// }
+		// //fw.flush();
+		// //fw.close();
+		// fr.close();
 		
+//		//æ¸¬è©¦æ—¥æœŸè½‰æ›
+		GetMethod Get = new GetMethod();
+		List<String> ResList = Get.doGetStrList_2();
+		String[] tmpSplitCol = ResList.get(1).split(",");
+//		System.out.println(tmpSplitCol[0]);
+//		WeatherController wc = new WeatherController();
+//		tmpSplitCol[1] = wc.DateFormat_yyyymmddhh(tmpSplitCol[1]);
+//		System.out.println(tmpSplitCol[1]);
+		
+//		SimpleDateFormat SDF = new SimpleDateFormat ("yyyymmddHH");
+//		SDF.setLenient(false);
+//		Date newDate = SDF.parse(tmpSplitCol[1]);
+//		SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+//		System.out.println(SDF.format(newDate).toString());
+
+		// System.out.println(tmpSplitCol.size());
+//		for (String data : ResList) {
+//			System.out.println(data);
+//		}
+		
+//		//ç¶²å€è½‰æ›
+//		String ThingName = "æ°£è±¡ç«™_old-";
+//		System.out.println(ThingName);
+//		ThingName = URLEncoder.encode(ThingName,"UTF-8");
+//		System.out.println(ThingName);
+		
+//		//æ¸¬è©¦POST_THINGæª”æ¡ˆ
+//		 setPostThingObject("555","555","555","555","555","555","555","555","555","555","555","555","555","555","555","555");
+//		 System.out.println(PostThingObject);
+//		// System.out.println(ResList.get(1));
+		
+		//æ¸¬è©¦POST_DATA
+		
+//		String Date_addT[] = tmpSplitCol[1].split(" ");
+//		for(int i=0; i<Date_addT.length; i++){
+//			System.out.println(Date_addT[i]);
+//		}
+		WeatherController wc = new WeatherController();
+		tmpSplitCol[1] = wc.DateFormat_yyyymmddhh("2002010124");
+		System.out.println(tmpSplitCol[1]);
+//		String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
+//		String PS01 = tmpSplitCol[2];
+//		String TX01 = tmpSplitCol[3];
+//		String RH01 = tmpSplitCol[4];
+//		String WD01 = tmpSplitCol[5];
+//		String WD02 = tmpSplitCol[6];
+//		String SS01 = tmpSplitCol[7];
 		
 	}
 }

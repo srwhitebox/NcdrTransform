@@ -56,7 +56,7 @@ public class CctvThingJson {
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"CCTV-URL\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"CCTV-ßYÆ…∏Í∞T\"\r\n" + 
+				"\"description\":\"CCTV-Âç≥ÊôÇË≥áË®ä\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 

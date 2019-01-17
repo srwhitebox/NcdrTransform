@@ -18,8 +18,8 @@ public class ReservoirWaterLevelThingJson {
 	}
 	public void setPostThingObject(String ST_NO,String RES_NAME,String BASIN_NO,String RV_NAME,String CAPACITY_E,String NWL_MX,String DWL,String Enabled,String Capacity_T,String HydraulicStructure,String FloodPrevention,String Importance,String Upload,String KeyInIrrigate,String KeyInPublic,String KeyInIndustial,String KeyInElectric,String KeyInFlood,String Note,String WriteDateTime,String WGS84_Lon,String WGS84_Lat) {
 		PostThingObject="{\r\n" + 
-				"\"name\":\"§Ù¶ÏØ∏-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
+				"\"name\":\"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\": "+ST_NO+",\r\n" + 
 				"\"stationName\": \""+RES_NAME+"\",\r\n" + 
@@ -43,8 +43,8 @@ public class ReservoirWaterLevelThingJson {
 				"},\r\n" + 
 				"\"Locations\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"§Ù¶ÏØ∏-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
+				"\"name\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+RES_NAME+"\",\r\n" + 
 				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
 				"\"location\": {\r\n" + 
 				"\"type\": \"Point\",\r\n" + 
@@ -57,8 +57,8 @@ public class ReservoirWaterLevelThingJson {
 				"],\r\n" + 
 				"\"Datastreams\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"§Ù¶ÏØ∏-"+ST_NO+"-WaterLine\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-"+ST_NO+"-WaterLine\",\r\n" + 
+				"\"name\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-WaterLine\",\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-WaterLine\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"meter\",\r\n" + 
@@ -72,9 +72,9 @@ public class ReservoirWaterLevelThingJson {
 				"  \"metadata\": \"https://www.ncdr.nat.gov.tw/\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"§Ù¶ÏØ∏-WaterLine\",\r\n" + 
+				"\"name\": \"Ê∞¥‰ΩçÁ´ô-WaterLine\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-•ÿ´e§Ù¶Ïº–∞™\"\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-ÁõÆÂâçÊ∞¥‰ΩçÊ®ôÈ´ò\"\r\n" + 
 				"}\r\n" +
 				"}\r\n" + 
 				"]\r\n" + 

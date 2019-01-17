@@ -18,8 +18,8 @@ public class WaterLevelThingJson {
 	}
 	public void setPostThingObject(String ST_NO,String NAME_C,String BASIN_NO,String ADDR_C,String WarningLine1,String WarningLine2,String WarningLine3,String PlanFloodLine,String TopLine,String BottomLine,String nWGS84_Lon,String nWGS84_Lat,String Attribute) {
 		PostThingObject="{\r\n" + 
-				"\"name\":\"§Ù¶ÏØ∏-"+ST_NO+"-"+NAME_C+"\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-"+ST_NO+"-"+NAME_C+"\",\r\n" + 
+				"\"name\":\"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+NAME_C+"\",\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+NAME_C+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\": \""+ST_NO+"\",\r\n" + 
 				"\"stationName\": \""+NAME_C+"\",\r\n" + 
@@ -35,8 +35,8 @@ public class WaterLevelThingJson {
 				"},\r\n" + 
 				"\"Locations\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"§Ù¶ÏØ∏-"+ST_NO+"-"+NAME_C+"\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-"+ST_NO+"-"+ADDR_C+"-"+NAME_C+"\",\r\n" + 
+				"\"name\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+NAME_C+"\",\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-"+ADDR_C+"-"+NAME_C+"\",\r\n" + 
 				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
 				"\"location\": {\r\n" + 
 				"\"type\": \"Point\",\r\n" + 
@@ -49,8 +49,8 @@ public class WaterLevelThingJson {
 				"],\r\n" + 
 				"\"Datastreams\": [\r\n" + 
 				"{\r\n" + 
-				"\"name\": \"§Ù¶ÏØ∏-"+ST_NO+"-Stage\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-"+ST_NO+"-Stage\",\r\n" + 
+				"\"name\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-Stage\",\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-"+ST_NO+"-Stage\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
 				"\"name\": \"NA\",\r\n" + 
@@ -64,9 +64,9 @@ public class WaterLevelThingJson {
 				"  \"metadata\": \"https://www.ncdr.nat.gov.tw/\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
-				"\"name\": \"§Ù¶ÏØ∏-Stage\",\r\n" + 
+				"\"name\": \"Ê∞¥‰ΩçÁ´ô-Stage\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"§Ù¶ÏØ∏-§Ù¶Ï∏Í∞T\"\r\n" + 
+				"\"description\": \"Ê∞¥‰ΩçÁ´ô-Ê∞¥‰ΩçË≥áË®ä\"\r\n" + 
 				"}\r\n"+ 
 				"}\r\n" + 
 				"]\r\n" + 

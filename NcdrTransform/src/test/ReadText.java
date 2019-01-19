@@ -218,6 +218,29 @@ public class ReadText {
 
 	public static void main(String[] args) throws IOException, ParseException {
 		// TODO Auto-generated method stub
+		//讀寫檔案(auto.txt)
+		
+//		 List<String> ResList = new ArrayList<>();
+//		 String CurrentLine;
+//		 boolean Filter_data = false;
+//		 int i = 0;
+//		 //FileReader fr = new FileReader("C:\\NCDR_history\\auto\\Auto_1998-2007.txt");
+//		 DataInputStream in = new DataInputStream(new FileInputStream(new File("C:\\NCDR_history\\auto\\Auto_1998-2007.txt")));
+//		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"MS950"));
+//		 FileWriter fw = new FileWriter("C:\\NCDR_history\\auto\\Auto_1998-2007_10.txt");
+//		 while ((CurrentLine = br.readLine()) != null) {
+//		 System.out.println(CurrentLine);
+//		 ResList.add(CurrentLine);
+//		 fw.write(CurrentLine + "\r\n");
+//		 i++;
+//		 if(i>102){
+//			 break;
+//		 }
+//		 }
+//		 fw.flush();
+//		 fw.close();
+//		 in.close();
+//		
 //		//讀寫檔案用(CSV)
 //		 List<String> ResList = new ArrayList<>();
 //		 String CurrentLine;
@@ -261,21 +284,21 @@ public class ReadText {
 //		 in.close();
 		
 		//測試讀檔函式(CSV)
-		GetMethod Get = new GetMethod();
-		List<String> ResList = Get.doGetStrList_2018();
-		String[] tmpSplitCol = ResList.get(1).split(",");
-		System.out.println("長度為："+tmpSplitCol.length);
-		for(int i=0; i<tmpSplitCol.length; i++){
-			tmpSplitCol[i] = tmpSplitCol[i].replace("\"", "");
-			if(tmpSplitCol[i].trim().isEmpty()){
-				//System.out.println("空的");
-				tmpSplitCol[i] = "0";
-			}
-			System.out.println(tmpSplitCol[i]);
-		}
-		WeatherController wc = new WeatherController();
-		System.out.println(tmpSplitCol[2]);
-		System.out.println(wc.DateFormat_yyyymmddhhmm(tmpSplitCol[2]));
+//		GetMethod Get = new GetMethod();
+//		List<String> ResList = Get.doGetStrList_2018();
+//		String[] tmpSplitCol = ResList.get(1).split(",");
+//		System.out.println("長度為："+tmpSplitCol.length);
+//		for(int i=0; i<tmpSplitCol.length; i++){
+//			tmpSplitCol[i] = tmpSplitCol[i].replace("\"", "");
+//			if(tmpSplitCol[i].trim().isEmpty()){
+//				//System.out.println("空的");
+//				tmpSplitCol[i] = "0";
+//			}
+//			System.out.println(tmpSplitCol[i]);
+//		}
+//		WeatherController wc = new WeatherController();
+//		System.out.println(tmpSplitCol[2]);
+//		System.out.println(wc.DateFormat_yyyymmddhhmm(tmpSplitCol[2]));
 		
 		
 //		//測試日期轉換
@@ -327,6 +350,13 @@ public class ReadText {
 //		String WD01 = tmpSplitCol[5];
 //		String WD02 = tmpSplitCol[6];
 //		String SS01 = tmpSplitCol[7];
+		
+		GetMethod Get = new GetMethod();
+		List<String> TmpList = Get.doGetStrList_auto();
+		String[] tmpSplitCol = TmpList.get(0).split(",");
+		for(String data :tmpSplitCol){
+			System.out.println(data);
+		}
 		
 	}
 }

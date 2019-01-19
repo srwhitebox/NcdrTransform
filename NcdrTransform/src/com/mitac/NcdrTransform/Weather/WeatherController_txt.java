@@ -44,7 +44,7 @@ public class WeatherController_txt {
 		}
 	}
 	public String DateFormat_yyyymmddhh (String date){
-		SimpleDateFormat SDF = new SimpleDateFormat ("yyyymmddk");
+		SimpleDateFormat SDF = new SimpleDateFormat ("yyyyMMddk");
 		SDF.setLenient(false);
 		Date newDate = null;
 		try {

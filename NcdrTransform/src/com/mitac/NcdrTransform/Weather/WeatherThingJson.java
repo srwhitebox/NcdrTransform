@@ -621,11 +621,11 @@ public class WeatherThingJson {
 				"\"Datastreams\": [\r\n" + 
 				"{\r\n" + 
 				"\"name\": \"氣象站-"+STID+"-PS01\",\r\n" + 
-				"\"description\": \"氣象站-"+STID+"-PS01\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-測站氣壓\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"NA\",\r\n" + 
-				"\"symbol\": \"NA\",\r\n" + 
+				"\"name\": \"hundredPascal\",\r\n" + 
+				"\"symbol\": \"hPa\",\r\n" + 
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
@@ -648,11 +648,11 @@ public class WeatherThingJson {
 				"},\r\n" + 
 				"{\r\n" + 
 				"\"name\": \"氣象站-"+STID+"-TX01\",\r\n" + 
-				"\"description\": \"氣象站-"+STID+"-TX01\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-氣溫\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"NA\",\r\n" + 
-				"\"symbol\": \" NA\",\r\n" + 
+				"\"name\": \"degree\",\r\n" + 
+				"\"symbol\": \" ℃\",\r\n" + 
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
@@ -702,11 +702,11 @@ public class WeatherThingJson {
 				"},\r\n" + 
 				"{\r\n" + 
 				"\"name\": \"氣象站-"+STID+"-WD01\",\r\n" + 
-				"\"description\": \"氣象站-"+STID+"-WD01\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-平均風風速\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"NA\",\r\n" + 
-				"\"symbol\": \"NA\",\r\n" + 
+				"\"name\": \"meter per second\",\r\n" + 
+				"\"symbol\": \"m/s\",\r\n" + 
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
@@ -756,11 +756,11 @@ public class WeatherThingJson {
 				"},\r\n" + 
 				"{\r\n" + 
 				"\"name\": \"氣象站-"+STID+"-SS01\",\r\n" + 
-				"\"description\": \"氣象站-"+STID+"-SS01\",\r\n" + 
+				"\"description\": \"氣象站-"+STID+"-日照時數\",\r\n" + 
 				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
 				"\"unitOfMeasurement\": {\r\n" + 
-				"\"name\": \"NA\",\r\n" + 
-				"\"symbol\": \"NA\",\r\n" + 
+				"\"name\": \"hour\",\r\n" + 
+				"\"symbol\": \"hr\",\r\n" + 
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 

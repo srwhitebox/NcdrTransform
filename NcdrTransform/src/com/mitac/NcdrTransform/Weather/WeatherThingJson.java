@@ -22,7 +22,7 @@ public class WeatherThingJson {
 			String OB01,String OB02,String OB03,String OB04,String OB05,String OB06,String OB07,String OB08,String OB09,String OB10,
 			String OB11,String OB12,String OB13,String OB14,String OB15,String OB16,String OB17,String OB18,String OB19,String OB20){
 		PostThingObject="{\r\n" + 
-				"\"name\": \"氣象站_old-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"name\": \"氣象站_old_2018-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"氣象站-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\":\""+STID+"\",\r\n" + 
@@ -1116,5 +1116,8 @@ public class WeatherThingJson {
 	}
 	public String getPostThingObject() {
 		return this.PostThingObject;
+	}
+	public String getPostThingObject_txt() {
+		return this.PostThingObject_txt;
 	}
 }

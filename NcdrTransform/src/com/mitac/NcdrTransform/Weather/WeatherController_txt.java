@@ -14,7 +14,7 @@ import com.mitac.NcdrTransform.methods.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class WeatherController {
+public class WeatherController_txt {
 	private String ServerUrlBase;
 	private final String CreateNcdrType = "GaugeStation";
 	private final String CreateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Sensor/JsonGaugeStation.txt";
@@ -26,10 +26,10 @@ public class WeatherController {
 	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_"+SDF.format(date)+".csv";
 //	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_201809260800.csv";
 	
-	public WeatherController(String ServerUrlBase) {
+	public WeatherController_txt(String ServerUrlBase) {
 		this.ServerUrlBase = ServerUrlBase;
 	}
-	public WeatherController() {
+	public WeatherController_txt() {
 		// TODO Auto-generated constructor stub
 	}
 	private boolean IsThingExist(String ThingName) {
@@ -44,7 +44,7 @@ public class WeatherController {
 		}
 	}
 	public String DateFormat_yyyymmddhh (String date){
-		SimpleDateFormat SDF = new SimpleDateFormat ("yyyyMMddk");
+		SimpleDateFormat SDF = new SimpleDateFormat ("yyyymmddk");
 		SDF.setLenient(false);
 		Date newDate = null;
 		try {
@@ -73,24 +73,11 @@ public class WeatherController {
 		return SDF.format(newDate).toString();
 		//return newDate.toString();
 	}
-	
-	public String DateFormat_yyyymmddhhmm (String date){
-		SimpleDateFormat SDF = new SimpleDateFormat ("yyyy/MM/dd HH:mm");
-		SDF.setLenient(false);
-		Date newDate = null;
-		try {
-			newDate = SDF.parse(date);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		return SDF.format(newDate).toString();
-	}
 	//歷史資料2017以前
 	public void UpdateThing() {
 		//get weather update stid array
 		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-		List<String> TmpList = Get.doGetStrList_2018();
+		List<String> TmpList = Get.doGetStrList_2();
 		
 		//--- get rainfall station info start ---
 		GetMethod GetRain = new GetMethod(CreateNcdrUrl);
@@ -107,13 +94,6 @@ public class WeatherController {
 		int ColNum=0;
 		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
 			String[] tmpSplitCol = TmpList.get(i).split(",");
-			for(int i1=0; i1<tmpSplitCol.length; i1++){
-				tmpSplitCol[i1] = tmpSplitCol[i1].replace("\"", "");
-				if(tmpSplitCol[i1].trim().isEmpty()){
-					//System.out.println("空的");
-					tmpSplitCol[i1] = "0";
-				}
-			}
 			if(i==0) {
 				ColNum = tmpSplitCol.length;
 			}
@@ -122,14 +102,14 @@ public class WeatherController {
 					JSONObject tmp = null;
 					for(int j=0;j<GetJsonArr.size();j++) {
 						tmp = JSONObject.fromObject(GetJsonArr.get(j));
-						if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //find it, break
+						if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
 							break;
 						}
 					}
-					if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //check again, avoid STID not found
+					if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");
-						String ThingName = "氣象站_old_2018-"+Stid+"-"+Stnm;
+						String ThingName = "氣象站_old-"+Stid+"-"+Stnm;
 						//System.out.println(ThingName);
 						try {
 							ThingName = URLEncoder.encode(ThingName,"UTF-8");
@@ -139,33 +119,22 @@ public class WeatherController {
 							continue;
 						}
 						//System.out.println(ThingName);
-						tmpSplitCol[2] = DateFormat_yyyymmddhhmm(tmpSplitCol[2]);
-						String RST_Date = tmpSplitCol[2].split(" ")[0]+"T"+tmpSplitCol[2].split(" ")[1];
-						String OB01 = tmpSplitCol[3];
-						String OB02 = tmpSplitCol[4];
-						String OB03 = tmpSplitCol[5];
-						String OB04 = tmpSplitCol[6];
-						String OB05 = tmpSplitCol[7];
-						String OB06 = tmpSplitCol[8];
-						String OB07 = tmpSplitCol[9];
-						String OB08 = tmpSplitCol[10];
-						String OB09 = tmpSplitCol[11];
-						String OB10 = tmpSplitCol[12];
-						String OB11 = tmpSplitCol[13];
-						String OB12 = tmpSplitCol[14];
-						String OB13 = tmpSplitCol[15];
-						String OB14 = tmpSplitCol[16];
-						String OB15 = tmpSplitCol[17];
-						String OB16 = tmpSplitCol[18];
-						String OB17 = tmpSplitCol[19];
-						String OB18 = tmpSplitCol[20];
-						String OB19 = tmpSplitCol[21];
-						String OB20 = tmpSplitCol[22];
+						tmpSplitCol[1] = DateFormat_yyyymmddhh(tmpSplitCol[1]);
+						String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
+						String PS01 = tmpSplitCol[2];
+						String TX01 = tmpSplitCol[3];
+						String RH01 = tmpSplitCol[4];
+						String WD01 = tmpSplitCol[5];
+						String WD02 = tmpSplitCol[6];
+						String SS01 = tmpSplitCol[7];
+//						String H_24R = tmpSplitCol[8];
+//						String WS15M = tmpSplitCol[9];
+//						String WD15M = tmpSplitCol[10];
+//						String WS15T = tmpSplitCol[11];
+//						String Elev = tmpSplitCol[14];
 						if(!IsThingExist(ThingName)) {  //thing is not exist, create it
-							WHR_json.setPostThingObject(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),RST_Date,
-									OB01,OB02,OB03,OB04,OB05,OB06,OB07,OB08,OB09,OB10
-									,OB11,OB12,OB13,OB14,OB15,OB16,OB17,OB18,OB19,OB20);
-							Post.doJsonPost(ServerUrlBase+"/Things",WHR_json.getPostThingObject());
+							WHR_json.setPostThingObject_txt(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),RST_Date,PS01,TX01,RH01,WD01,WD02,SS01);
+							Post.doJsonPost(ServerUrlBase+"/Things",WHR_json.getPostThingObject_txt());
 						}
 						else {	//thing is exist, update it
 							// --- get datastream id start ---
@@ -183,73 +152,47 @@ public class WeatherController {
 								String PostUrl = ServerUrlBase+"/Datastreams("+DataStreamId+")/Observations";
 								String DataStreamType = DataStreamName.split("-")[2];
 								//System.out.println(PostUrl+", Type: "+DataStreamType);
-								if(DataStreamType.equals("風速")){
-									WHR_json.setUpdateObject(RST_Date,OB01);
+								if(DataStreamType.equals("PS01")){
+									WHR_json.setUpdateObject(RST_Date,PS01);
 								}
-								else if(DataStreamType.equals("風向")) {
-									WHR_json.setUpdateObject(RST_Date,OB02);
+								else if(DataStreamType.equals("TX01")) {
+									WHR_json.setUpdateObject(RST_Date,TX01);
 								}
-								else if(DataStreamType.equals("濕度")){
-									WHR_json.setUpdateObject(RST_Date,OB03);
+								else if(DataStreamType.equals("RH01")){
+									WHR_json.setUpdateObject(RST_Date,RH01);
 								}
-								else if(DataStreamType.equals("氣壓")){
-									WHR_json.setUpdateObject(RST_Date,OB04);
+								else if(DataStreamType.equals("WD01")){
+									WHR_json.setUpdateObject(RST_Date,WD01);
 								}
-								else if(DataStreamType.equals("氣溫")){
-									WHR_json.setUpdateObject(RST_Date,OB05);
+								else if(DataStreamType.equals("WD02")){
+									WHR_json.setUpdateObject(RST_Date,WD02);
 								}
-								else if(DataStreamType.equals("紫外線指數")){
-									WHR_json.setUpdateObject(RST_Date,OB06);
+								else if(DataStreamType.equals("SS01")){
+									WHR_json.setUpdateObject(RST_Date,SS01);
 								}
-								else if(DataStreamType.equals("日累積雨量")) {
-									WHR_json.setUpdateObject(RST_Date,OB07);
-								}
-								else if(DataStreamType.equals("日最高溫度")){
-									WHR_json.setUpdateObject(RST_Date,OB08);
-								}
-								else if(DataStreamType.equals("日最高溫度發生時間")){
-									WHR_json.setUpdateObject(RST_Date,OB09);
-								}
-								else if(DataStreamType.equals("日最低溫度")){
-									WHR_json.setUpdateObject(RST_Date,OB10);
-								}
-								else if(DataStreamType.equals("日最低溫度發生時間")){
-									WHR_json.setUpdateObject(RST_Date,OB11);
-								}
-								else if(DataStreamType.equals("日照時數")) {
-									WHR_json.setUpdateObject(RST_Date,OB12);
-								}
-								else if(DataStreamType.equals("小時極大風速")){
-									WHR_json.setUpdateObject(RST_Date,OB13);
-								}
-								else if(DataStreamType.equals("小時極大風向")){
-									WHR_json.setUpdateObject(RST_Date,OB14);
-								}
-								else if(DataStreamType.equals("小時極大風速發生時間")){
-									WHR_json.setUpdateObject(RST_Date,OB15);
-								}
-								else if(DataStreamType.equals("小時最大10分鐘平均風速")){
-									WHR_json.setUpdateObject(RST_Date,OB16);
-								}
-								else if(DataStreamType.equals("小時最大10分鐘平均風向")) {
-									WHR_json.setUpdateObject(RST_Date,OB17);
-								}
-								else if(DataStreamType.equals("小時最大10分鐘平均風速發生時間")){
-									WHR_json.setUpdateObject(RST_Date,OB18);
-								}
-								else if(DataStreamType.equals("能見度")){
-									WHR_json.setUpdateObject(RST_Date,OB19);
-								}
-								else if(DataStreamType.equals("日累積全天空日輻射")){
-									WHR_json.setUpdateObject(RST_Date,OB20);
-								}
+//								else if(DataStreamType.equals("PRES")){
+//									WHR_json.setUpdateObject(RST_Date,PRES);
+//								}
+//								else if(DataStreamType.equals("HUMD")){
+//									WHR_json.setUpdateObject(RST_Date,HUMD);
+//								}
+//								else if(DataStreamType.equals("TEMP")){
+//									WHR_json.setUpdateObject(RST_Date,TEMP);
+//								}
+//								else if(DataStreamType.equals("WDSD")){
+//									WHR_json.setUpdateObject(RST_Date,WDSD);
+//								}
+//								else if(DataStreamType.equals("WDIR")){
+//									WHR_json.setUpdateObject(RST_Date,WDIR);
+//								}
+								//System.out.println(RF_json.getUpdateObject());
 								Post.doJsonPost(PostUrl,WHR_json.getUpdateObject());
 							}
 							//System.out.println(DataStreamIdMaps);
 							// --- get datastream id end ---
 						}
 					}else{
-						//System.out.println("there is no sensor");
+						System.out.println("there is no sensor");
 					}
 				}
 			}

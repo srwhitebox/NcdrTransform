@@ -273,8 +273,10 @@ public class ReadText {
 			}
 			System.out.println(tmpSplitCol[i]);
 		}
-		
+		WeatherController wc = new WeatherController();
 		System.out.println(tmpSplitCol[2]);
+		System.out.println(wc.DateFormat_yyyymmddhhmm(tmpSplitCol[2]));
+		
 		
 //		//測試日期轉換
 //		GetMethod Get = new GetMethod();

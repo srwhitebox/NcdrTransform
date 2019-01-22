@@ -102,7 +102,7 @@ public class GetMethod {
 	
 	public List<String> doGetStrList_2018(){
         try {
-        	List<String> ResList = new ArrayList<>();
+         List<String> ResList = new ArrayList<>();
    		 String CurrentLine;
    		 DataInputStream in = 
    				 new DataInputStream(
@@ -190,6 +190,27 @@ public class GetMethod {
     			dataAdd = "";
     		}
             return tmpSplitCol;
+        }
+        catch (IOException ex) {
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	public List<String> doGetStrList_rainfall_2018(){
+        try {
+         List<String> ResList = new ArrayList<>();
+   		 String CurrentLine;
+   		 DataInputStream in = 
+   				 new DataInputStream(
+   						 new FileInputStream(
+   								 new File("C:\\NCDR_history\\rainfall\\2018\\Rain_2018\\MetroRain_201801_10.csv")));
+   		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"utf-8"));
+   		 while ((CurrentLine = br.readLine()) != null) {
+   		 ResList.add(CurrentLine);
+   		 }
+		 in.close();
+            return ResList;
         }
         catch (IOException ex) {
 			ex.printStackTrace();

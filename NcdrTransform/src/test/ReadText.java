@@ -237,16 +237,19 @@ public class ReadText {
 //		//fw.flush();
 //		//fw.close();
 //		br.close();
+		
 		WeatherController wc = new WeatherController();
 		GetMethod Get = new GetMethod();
-		List<String> TmpList = Get.doGetStrList_rainfall();
-		String[] tmpSplitCol = TmpList.get(1).split(",");
+		List<String> TmpList = Get.doGetStrList_rainfall_2018();
+		String[] tmpSplitCol = TmpList.get(2).split(",");
 		for(String data :tmpSplitCol){
 			System.out.println(data);
 		}
 		
-		tmpSplitCol[1] = wc.DateFormat_yyyymmddhh(tmpSplitCol[1]);
-		System.out.println(tmpSplitCol[1]);
+		
+		String RST_Date = tmpSplitCol[0].split(" ")[0]+"T"+tmpSplitCol[0].split(" ")[1];
+		System.out.println(RST_Date);
+		
 		//讀寫檔案(auto.txt)
 //		 List<String> ResList = new ArrayList<>();
 //		 String CurrentLine;
@@ -272,21 +275,26 @@ public class ReadText {
 //		//讀寫檔案用(CSV)
 //		 List<String> ResList = new ArrayList<>();
 //		 String CurrentLine;
-//		 boolean Filter_data = false;
 //		 int i = 0;
-//		 //FileReader fr = new FileReader("C:\\NCDR_history\\weather\\Metro_2018\\201803.csv");
-//		 DataInputStream in = new DataInputStream(new FileInputStream(new File("C:\\NCDR_history\\weather\\Metro_2018\\201807.csv")));
-//		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"ms950"));
-//		 FileWriter fw = new FileWriter("C:\\NCDR_history\\weather\\Metro_2018\\201803_10.csv");
+//		 FileReader fr = new FileReader("C:\\NCDR_history\\weather\\Metro_2018\\201803.csv");
+//		 DataInputStream in = 
+//   				 new DataInputStream(
+//   						 new FileInputStream(
+//   								 new File("C:\\NCDR_history\\rainfall\\2018\\Rain_2018\\MetroRain_201801.csv")));
+//   		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"MS950"));
+//		 FileWriter fw = new FileWriter("C:\\NCDR_history\\rainfall\\2018\\Rain_2018\\MetroRain_201801_1000.csv");
 //		 while ((CurrentLine = br.readLine()) != null) {
 //		 System.out.println(CurrentLine);
 //		 ResList.add(CurrentLine);
 //		 fw.write(CurrentLine+"\n");
 //		 i++;
-//		 if(i>10){
+//		 if(i>1000){
 //			 break;
 //		 }
 //		 }
+//		 fw.flush();
+//		 fw.close();
+//		 in.close();
 		 
 		 //讀寫檔案用(txt)
 		 //FileWriter fw = new FileWriter("C:\\NCDR_history\\weather\\Metro_1998-2017_10.txt");

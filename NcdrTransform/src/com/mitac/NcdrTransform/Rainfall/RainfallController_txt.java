@@ -15,7 +15,7 @@ import com.mitac.NcdrTransform.methods.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class RainfallController {
+public class RainfallController_txt {
 	private String ServerUrlBase;
 	private final String CreateNcdrType = "GaugeStation";
 	private final String CreateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Sensor/JsonGaugeStation.txt";
@@ -27,10 +27,10 @@ public class RainfallController {
 	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_"+SDF.format(date)+".csv";
 //	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_201809260800.csv";
 	
-	public RainfallController(String ServerUrlBase) {
+	public RainfallController_txt(String ServerUrlBase) {
 		this.ServerUrlBase = ServerUrlBase;
 	}
-	public RainfallController() {
+	public RainfallController_txt() {
 		// TODO Auto-generated constructor stub
 	}
 	private boolean IsThingExist(String ThingName) {
@@ -74,25 +74,11 @@ public class RainfallController {
 		return SDF.format(newDate).toString();
 		//return newDate.toString();
 	}
-	
-	public String DateFormat_yyyymmddhhmm (String date){
-		SimpleDateFormat SDF = new SimpleDateFormat ("yyyy/MM/dd HH:mm");
-		SDF.setLenient(false);
-		Date newDate = null;
-		try {
-			newDate = SDF.parse(date);
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-		SDF = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		return SDF.format(newDate).toString();
-	}
-	
 	//歷史資料2017以前
 	public void UpdateThing() {
 		//get weather update stid array
 		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-		List<String> TmpList = Get.doGetStrList_rainfall_2018();
+		List<String> TmpList = Get.doGetStrList_rainfall();
 		
 		//--- get rainfall station info start ---
 		GetMethod GetRain = new GetMethod(CreateNcdrUrl);
@@ -109,13 +95,6 @@ public class RainfallController {
 		int ColNum=0;
 		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
 			String[] tmpSplitCol = TmpList.get(i).split(",");
-			for(int i1=0; i1<tmpSplitCol.length; i1++){
-				tmpSplitCol[i1] = tmpSplitCol[i1].replace("\"", "");
-				if(tmpSplitCol[i1].trim().isEmpty()){
-					//System.out.println("空的");
-					tmpSplitCol[i1] = "0";
-				}
-			}
 			if(i==0) {
 				ColNum = tmpSplitCol.length;
 			}
@@ -124,14 +103,14 @@ public class RainfallController {
 					JSONObject tmp = null;
 					for(int j=0;j<GetJsonArr.size();j++) {
 						tmp = JSONObject.fromObject(GetJsonArr.get(j));
-						if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //find it, break
+						if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
 							break;
 						}
 					}
-					if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //check again, avoid STID not found
+					if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");
-						String ThingName = "雨量站_old_2018-"+Stid+"-"+Stnm;
+						String ThingName = "雨量站_old-"+Stid+"-"+Stnm;
 						//System.out.println(ThingName);
 						try {
 							ThingName = URLEncoder.encode(ThingName,"UTF-8");
@@ -141,9 +120,9 @@ public class RainfallController {
 							continue;
 						}
 						//System.out.println(ThingName);
-						//tmpSplitCol[0] = DateFormat_yyyymmddhhmm(tmpSplitCol[0]);
-						String RST_Date = tmpSplitCol[0].split(" ")[0]+"T"+tmpSplitCol[0].split(" ")[1];
-						String DD_RMN = tmpSplitCol[3];
+						tmpSplitCol[1] = DateFormat_yyyymmddhh(tmpSplitCol[1]);
+						String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
+						String PP01 = tmpSplitCol[2];
 						
 						if(!IsThingExist(ThingName)) {  //thing is not exist, create it
 							RF_json.setPostThingObject(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),tmp.getString("Elev"));
@@ -164,8 +143,8 @@ public class RainfallController {
 								String PostUrl = ServerUrlBase+"/Datastreams("+DataStreamId+")/Observations";
 								String DataStreamType = DataStreamName.split("-")[2];
 								//System.out.println(PostUrl+", Type: "+DataStreamType);
-								if(DataStreamType.equals("DD_RMN")){
-									RF_json.setUpdateObject(RST_Date,DD_RMN);
+								if(DataStreamType.equals("PP01")){
+									RF_json.setUpdateObject(RST_Date,PP01);
 								}
 								Post.doJsonPost(PostUrl,RF_json.getUpdateObject());
 							}

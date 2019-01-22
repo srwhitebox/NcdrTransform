@@ -19,6 +19,59 @@ public class RainfallThingJson {
 	
 	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
 		PostThingObject="{\r\n" + 
+				"\"name\": \"雨量站_old_2018-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"description\": \"雨量站-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"properties\": {\r\n" + 
+				"\"stationID\":\""+STID+"\",\r\n" + 
+				"\"stationName\":\""+STNM+"\",\r\n" + 
+				"\"city\":\""+CityName+"\",\r\n" + 
+				"\"city_SN\":\""+City_SN+"\",\r\n" + 
+				"\"township\":\""+TownName+"\",\r\n" + 
+				"\"town_SN\":\""+Town_SN+"\",\r\n" + 
+				"\"Attribute\":\""+Attribute+"\",\r\n" + 
+				"\"AGL\":"+Elev+"\r\n" + 
+				"},\r\n" + 
+				"\"Locations\": [\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"雨量站-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"description\": \"雨量站-"+STID+"-"+CityName+TownName+STNM+"\",\r\n" + 
+				"\"encodingType\": \"application/vnd.geo+json\",\r\n" + 
+				"\"location\": {\r\n" + 
+				"\"type\": \"Point\",\r\n" + 
+				"\"coordinates\": [\r\n" + 
+				""+LON+",\r\n" + 
+				""+LAT+"\r\n" + 
+				"]\r\n" + 
+				"}\r\n" + 
+				"}],\r\n" + 
+				"\"Datastreams\": [\r\n" + 
+				"{\r\n" + 
+				"\"name\": \"雨量站-"+STID+"-DD_RMN\",\r\n" + 
+				"\"description\": \"雨量站-"+STID+"-DD_RMN\",\r\n" + 
+				"\"observationType\": \"http://www.opengis.net/def/observationType/OGC-OM/2.0/OM_Measurement\",\r\n" + 
+				"\"unitOfMeasurement\": {\r\n" + 
+				"\"name\":\"NA\",\r\n" + 
+				"\"symbol\": \"NA\",\r\n" + 
+				"\"definition\":\"NA\"\r\n" + 
+				"},\r\n" + 
+				"\"Sensor\": {\r\n" + 
+				"\"name\": \"NCDR DataBase\",\r\n" + 
+				"\"description\": \"NCDR DataBase\",\r\n" + 
+				"\"encodingType\": \"application/pdf\",\r\n" + 
+				"\"metadata\": \"NCDR DataBase\"\r\n" + 
+				"},\r\n" + 
+				"\"ObservedProperty\": {\r\n" + 
+				"\"name\": \"雨量站-DD_RMN\",\r\n" + 
+				"\"definition\": \"NA\",\r\n" + 
+				"\"description\":\"NCDR-DD_RMN\"\r\n" + 
+				"}"+ 
+				"}\r\n" + 
+				"]\r\n" + 
+				"}";
+	}
+	
+	public void setPostThingObject_txt(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
+		PostThingObject="{\r\n" + 
 				"\"name\": \"雨量站_old-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"雨量站-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 

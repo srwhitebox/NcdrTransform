@@ -17,7 +17,7 @@ public class RainfallThingJson {
 		return UpdateObject;
 	}
 	
-	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
+	public void setPostThingObject_csv(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
 		PostThingObject="{\r\n" + 
 				"\"name\": \"雨量站_old_2018-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"雨量站-"+STID+"-"+STNM+"\",\r\n" + 
@@ -70,7 +70,7 @@ public class RainfallThingJson {
 				"}";
 	}
 	
-	public void setPostThingObject_txt(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
+	public void setPostThingObject(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
 		PostThingObject="{\r\n" + 
 				"\"name\": \"雨量站_old-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"雨量站-"+STID+"-"+STNM+"\",\r\n" + 

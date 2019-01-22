@@ -77,7 +77,7 @@ public class WeatherController {
 	public void UpdateThing() {
 		//get weather update stid array
 		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-		List<String> TmpList = Get.doGetStrList_auto();
+		List<String> TmpList = Get.doGetStrList_2();
 		
 		//--- get rainfall station info start ---
 		GetMethod GetRain = new GetMethod(CreateNcdrUrl);

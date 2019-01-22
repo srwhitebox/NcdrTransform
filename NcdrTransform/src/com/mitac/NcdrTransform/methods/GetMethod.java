@@ -127,7 +127,7 @@ public class GetMethod {
     		String CurrentLine;
     		boolean Filter_data = false;
     		//int i = 0;
-    		FileReader fr = new FileReader("C:\\NCDR_history\\auto\\Auto_1998-2007_10.txt");
+    		FileReader fr = new FileReader("C:\\NCDR_history\\auto\\Auto_2008-2018_10.txt");
     		BufferedReader br = new BufferedReader(fr);
     		while ((CurrentLine = br.readLine()) != null) {
     			if(CurrentLine.contains("# stno")){

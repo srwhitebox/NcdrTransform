@@ -14,7 +14,7 @@ import com.mitac.NcdrTransform.methods.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class WeatherController_txt {
+public class WeatherController_auto {
 	private String ServerUrlBase;
 	private final String CreateNcdrType = "GaugeStation";
 	private final String CreateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Sensor/JsonGaugeStation.txt";
@@ -26,10 +26,10 @@ public class WeatherController_txt {
 	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_"+SDF.format(date)+".csv";
 //	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_201809260800.csv";
 	
-	public WeatherController_txt(String ServerUrlBase) {
+	public WeatherController_auto(String ServerUrlBase) {
 		this.ServerUrlBase = ServerUrlBase;
 	}
-	public WeatherController_txt() {
+	public WeatherController_auto() {
 		// TODO Auto-generated constructor stub
 	}
 	private boolean IsThingExist(String ThingName) {
@@ -77,7 +77,7 @@ public class WeatherController_txt {
 	public void UpdateThing() {
 		//get weather update stid array
 		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-		List<String> TmpList = Get.doGetStrList_2();
+		List<String> TmpList = Get.doGetStrList_auto();
 		
 		//--- get rainfall station info start ---
 		GetMethod GetRain = new GetMethod(CreateNcdrUrl);

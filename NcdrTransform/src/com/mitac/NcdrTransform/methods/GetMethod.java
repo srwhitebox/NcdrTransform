@@ -159,4 +159,42 @@ public class GetMethod {
 		}
 	}
 	
+	public List<String> doGetStrList_rainfall(){
+        try {
+        	List<String> ResList = new ArrayList<>();
+    		String CurrentLine;
+    		boolean Filter_data = false;
+    		//int i = 0;
+    		FileReader fr = new FileReader("C:\\NCDR_history\\rainfall\\Rain_1998-2017_10.txt");
+    		BufferedReader br = new BufferedReader(fr);
+    		while ((CurrentLine = br.readLine()) != null) {
+    			if(CurrentLine.contains("# stno")){
+    				Filter_data = true;
+    			}
+    			if(Filter_data == true){
+    				ResList.add(CurrentLine);
+    			}
+    		}
+    		fr.close();
+    		List<String> tmpSplitCol = new ArrayList<>();
+    		String dataAdd = "";
+    		for (int j = 0; j < ResList.size(); j++) {
+    			String[] tmpSplitCol_full = ResList.get(j).split(" ");
+    			// System.out.println(tmpSplitCol_full[4].trim());
+    			for (String data : tmpSplitCol_full) {
+    				if (!data.trim().isEmpty() && !data.trim().equals("#")) {
+    					dataAdd = dataAdd + data + ",";
+    				}
+    			}
+    			tmpSplitCol.add(dataAdd.substring(0, dataAdd.length() - 1));
+    			dataAdd = "";
+    		}
+            return tmpSplitCol;
+        }
+        catch (IOException ex) {
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
 }

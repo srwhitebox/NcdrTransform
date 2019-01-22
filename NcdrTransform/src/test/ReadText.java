@@ -218,8 +218,36 @@ public class ReadText {
 
 	public static void main(String[] args) throws IOException, ParseException {
 		// TODO Auto-generated method stub
-		//讀寫檔案(auto.txt)
 		
+//		List<String> ResList = new ArrayList<>();
+//		String CurrentLine;
+//		int i = 0;
+//		BufferedReader br = 
+//		        new BufferedReader(new InputStreamReader(
+//		            new FileInputStream("C:\\NCDR_history\\rainfall\\Rain_1998-2017_10.txt"),"utf-8"));
+//		//FileWriter fw = new FileWriter("C:\\NCDR_history\\rainfall\\Rain_1998-2017_10.txt");
+//		while ((CurrentLine = br.readLine()) != null) {
+//			//if(i>102){
+//			//	break;
+//			//}
+//			//fw.write(CurrentLine + "\r\n");
+//			System.out.println(CurrentLine);
+//			//i++;
+//		}
+//		//fw.flush();
+//		//fw.close();
+//		br.close();
+		WeatherController wc = new WeatherController();
+		GetMethod Get = new GetMethod();
+		List<String> TmpList = Get.doGetStrList_rainfall();
+		String[] tmpSplitCol = TmpList.get(1).split(",");
+		for(String data :tmpSplitCol){
+			System.out.println(data);
+		}
+		
+		tmpSplitCol[1] = wc.DateFormat_yyyymmddhh(tmpSplitCol[1]);
+		System.out.println(tmpSplitCol[1]);
+		//讀寫檔案(auto.txt)
 //		 List<String> ResList = new ArrayList<>();
 //		 String CurrentLine;
 //		 boolean Filter_data = false;
@@ -351,12 +379,12 @@ public class ReadText {
 //		String WD02 = tmpSplitCol[6];
 //		String SS01 = tmpSplitCol[7];
 		
-		GetMethod Get = new GetMethod();
-		List<String> TmpList = Get.doGetStrList_auto();
-		String[] tmpSplitCol = TmpList.get(0).split(",");
-		for(String data :tmpSplitCol){
-			System.out.println(data);
-		}
+//		GetMethod Get = new GetMethod();
+//		List<String> TmpList = Get.doGetStrList_auto();
+//		String[] tmpSplitCol = TmpList.get(0).split(",");
+//		for(String data :tmpSplitCol){
+//			System.out.println(data);
+//		}
 		
 	}
 }

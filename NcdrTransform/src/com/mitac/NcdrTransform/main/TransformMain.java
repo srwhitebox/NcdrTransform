@@ -37,7 +37,7 @@ public class TransformMain {
 				CCTV_Controller.CreateThing();
 				WL_Controller.CreateThing();
 				RWL_Controller.CreateThing();
-				RF_Controller.CreateThing();
+				RF_Controller.UpdateThing();
 				WHR_Controller.UpdateThing();
 			}
 			else if(DataType.equals("CCTV")) {
@@ -51,7 +51,7 @@ public class TransformMain {
 			}
 			else if(DataType.equals("Rainfall")) {
 				System.out.println("Rainfall...");
-				RF_Controller.CreateThing();
+				RF_Controller.UpdateThing();
 			}
 			else {
 				System.out.println("Error:");

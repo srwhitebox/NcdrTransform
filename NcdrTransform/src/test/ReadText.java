@@ -15,8 +15,21 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.TrustManager;
+
 import com.mitac.NcdrTransform.Weather.WeatherController;
 import com.mitac.NcdrTransform.methods.GetMethod;
+
+import net.sf.json.JSON;
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+import net.sf.json.util.JSONStringer;
+
+
 
 public class ReadText {
 
@@ -238,17 +251,124 @@ public class ReadText {
 //		//fw.close();
 //		br.close();
 		
-		WeatherController wc = new WeatherController();
-		GetMethod Get = new GetMethod();
-		List<String> TmpList = Get.doGetStrList_rainfall_2018();
-		String[] tmpSplitCol = TmpList.get(2).split(",");
-		for(String data :tmpSplitCol){
-			System.out.println(data);
+//		WeatherController wc = new WeatherController();
+//		GetMethod Get = new GetMethod();
+//		List<String> TmpList = Get.doGetStrList_rainfall_2018();
+//		String[] tmpSplitCol = TmpList.get(2).split(",");
+//		for(String data :tmpSplitCol){
+//			System.out.println(data);
+//		}
+//		
+//		
+//		String RST_Date = tmpSplitCol[0].split(" ")[0]+"T"+tmpSplitCol[0].split(" ")[1];
+//		System.out.println(RST_Date);
+		
+		//連線開放資料取得JSON
+//		final String CreateNcdrUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314";
+//		GetMethod GetRain = new GetMethod(CreateNcdrUrl);
+//		net.sf.json.JSONObject GetJson = GetRain.doGetJson_https().getJSONObject("records");
+//		JSONArray GetJsonArr = GetJson.getJSONArray("location");
+//		Object jsonOb = GetJsonArr.get(0);
+		
+		String CreateAndUpdateUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314";
+		//String testJson = "{\"lat\":\"24.778333\",\"lon\":\"121.494583\",\"locationName\":\"福山\",\"stationId\":\"C0A560\",\"time\":{\"obsTime\":\"2019-01-22 16:00:00\"},\"weatherElement\":[{\"elementName\":\"ELEV\",\"elementValue\":\"405.0\"},{\"elementName\":\"WDIR\",\"elementValue\":\"291\"},{\"elementName\":\"WDSD\",\"elementValue\":\"0.6\"},{\"elementName\":\"TEMP\",\"elementValue\":\"10.0\"},{\"elementName\":\"HUMD\",\"elementValue\":\"0.88\"},{\"elementName\":\"PRES\",\"elementValue\":\"972.1\"},{\"elementName\":\"SUN\",\"elementValue\":\"-99\"},{\"elementName\":\"H_24R\",\"elementValue\":\"0.0\"},{\"elementName\":\"H_FX\",\"elementValue\":\"-99\"},{\"elementName\":\"H_XD\",\"elementValue\":\"-99\"},{\"elementName\":\"H_FXT\",\"elementValue\":\"-99\"},{\"elementName\":\"D_TX\",\"elementValue\":\"12.40\"},{\"elementName\":\"D_TXT\",\"elementValue\":\"null\"},{\"elementName\":\"D_TN\",\"elementValue\":\"9.80\"},{\"elementName\":\"D_TNT\",\"elementValue\":\"null\"}],\"parameter\":[{\"parameterName\":\"CITY\",\"parameterValue\":\"新北市\"},{\"parameterName\":\"CITY_SN\",\"parameterValue\":\"06\"},{\"parameterName\":\"TOWN\",\"parameterValue\":\"烏來區\"},{\"parameterName\":\"TOWN_SN\",\"parameterValue\":\"061\"}]}";
+		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
+		JSONObject OpenDataList = Get.doGetJson_https().getJSONObject("records");
+		JSONArray GetJsonArr_Open = OpenDataList.getJSONArray("location");
+		for(int i=0;i<3;i++){
+			JSONObject OpenJson = (JSONObject) GetJsonArr_Open.get(i);
+			
+			JSONObject OpenJson_Time = (JSONObject) OpenJson.get("time");
+			String RST_Date = OpenJson_Time.get("obsTime").toString().split(" ")[0]+"T"+OpenJson_Time.get("obsTime").toString().split(" ")[1];
+			JSONArray obOpen = OpenJson.getJSONArray("weatherElement");
+			
+			String ELEV = null;
+			String WDIR = null;
+			String WDSD = null;
+			String TEMP = null;
+			String HUMD = null;
+			String PRES = null;
+			String SUN = null;
+			String H_24RNA = null;
+			String H_FX = null;
+			String H_XD = null;
+			String H_FXT = null;
+			String D_TX = null;
+			String D_TXT = null;
+			String D_TN = null;
+			String D_TNT = null;
+			
+			for(int k=0; k<obOpen.size(); k++){
+				JSONObject weatherElement = (JSONObject) obOpen.get(k);
+				String obData = weatherElement.getString("elementName");
+				switch (obData){
+				case "ELEV":
+					ELEV = weatherElement.getString("elementValue");
+		            break;
+				case "WDIR":
+					WDIR = weatherElement.getString("elementValue");
+		            break;
+				case "WDSD":
+					WDSD = weatherElement.getString("elementValue");
+		            break;
+				case "TEMP":
+					TEMP = weatherElement.getString("elementValue");
+		            break;
+				case "HUMD":
+					HUMD = weatherElement.getString("elementValue");
+		            break;
+				case "PRES":
+					PRES = weatherElement.getString("elementValue");
+		            break;
+				case "SUN":
+					SUN = weatherElement.getString("elementValue");
+		            break;
+				case "H_24RNA":
+					H_24RNA = weatherElement.getString("elementValue");
+		            break;
+				case "H_FX":
+					H_FX = weatherElement.getString("elementValue");
+		            break;
+				case "H_XD":
+					H_XD = weatherElement.getString("elementValue");
+		            break;
+				case "H_FXT":
+					H_FXT = weatherElement.getString("elementValue");
+		            break;
+				case "D_TX":
+					D_TX = weatherElement.getString("elementValue");
+		            break;
+				case "D_TXT":
+					D_TXT = weatherElement.getString("elementValue");
+		            break;
+				case "D_TN":
+					D_TN = weatherElement.getString("elementValue");
+		            break;
+				case "D_TNT":
+					D_TNT = weatherElement.getString("elementValue");
+		            break;
+		            }
+			}
+			
+			
+			System.out.println(OpenJson.get("stationId").toString());
+			
 		}
 		
 		
-		String RST_Date = tmpSplitCol[0].split(" ")[0]+"T"+tmpSplitCol[0].split(" ")[1];
-		System.out.println(RST_Date);
+		//JSONObject tmp = null;
+		
+		//JSONObject j = new JSONObject(testJson);
+		//JSONObject j_2 = (JSONObject) j.get("time");
+		//org.json.JSONArray GetJsonArr_1 = j.getJSONArray("weatherElement");
+		//JSONObject obOpen = (JSONObject) (GetJsonArr_1.get(0));
+
+		
+		//System.out.println(j.get("stationId").toString());
+		//System.out.println(j_2.get("obsTime").toString());
+		//System.out.println(j_3.getString("elementName"));
+		//String level = j_3.getString("elementName");
+		
 		
 		//讀寫檔案(auto.txt)
 //		 List<String> ResList = new ArrayList<>();

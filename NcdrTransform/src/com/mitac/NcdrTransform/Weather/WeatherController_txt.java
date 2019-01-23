@@ -14,7 +14,7 @@ import com.mitac.NcdrTransform.methods.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class WeatherController {
+public class WeatherController_txt {
 	private String ServerUrlBase;
 	private final String CreateNcdrType = "GaugeStation";
 	private final String CreateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Sensor/JsonGaugeStation.txt";
@@ -23,13 +23,13 @@ public class WeatherController {
 	Date date = new Date();
 	
 	SimpleDateFormat SDF = new SimpleDateFormat ("yyyyMMddHH00");
-	private String CreateAndUpdateUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314";
+	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_"+SDF.format(date)+".csv";
 //	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_201809260800.csv";
 	
-	public WeatherController(String ServerUrlBase) {
+	public WeatherController_txt(String ServerUrlBase) {
 		this.ServerUrlBase = ServerUrlBase;
 	}
-	public WeatherController() {
+	public WeatherController_txt() {
 		// TODO Auto-generated constructor stub
 	}
 	private boolean IsThingExist(String ThingName) {
@@ -77,8 +77,7 @@ public class WeatherController {
 	public void UpdateThing() {
 		//get weather update stid array
 		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-		JSONObject OpenDataList = Get.doGetJson_https().getJSONObject("records");
-		JSONArray GetJsonArr_Open = OpenDataList.getJSONArray("location");
+		List<String> TmpList = Get.doGetStrList_2();
 		
 		//--- get rainfall station info start ---
 		GetMethod GetRain = new GetMethod(CreateNcdrUrl);
@@ -93,24 +92,24 @@ public class WeatherController {
 //		System.out.println("Weather Update size: "+(TmpList.size()-1));
 		
 		int ColNum=0;
-		for(int i=0;i<GetJsonArr_Open.size();i++) {//TmpList.size()
-			JSONObject OpenJson = (JSONObject) GetJsonArr_Open.get(i);
-			if(false) {
-				
+		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
+			String[] tmpSplitCol = TmpList.get(i).split(",");
+			if(i==0) {
+				ColNum = tmpSplitCol.length;
 			}
 			else {
-				if(true) {
+				if(tmpSplitCol.length==ColNum) {
 					JSONObject tmp = null;
 					for(int j=0;j<GetJsonArr.size();j++) {
 						tmp = JSONObject.fromObject(GetJsonArr.get(j));
-						if(OpenJson.get("stationId").toString().equals(tmp.getString("STID"))) { //find it, break
+						if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
 							break;
 						}
 					}
-					if(OpenJson.get("stationId").toString().equals(tmp.getString("STID"))) { //check again, avoid STID not found
+					if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");
-						String ThingName = "氣象站_open-"+Stid+"-"+Stnm;
+						String ThingName = "氣象站_old-"+Stid+"-"+Stnm;
 						//System.out.println(ThingName);
 						try {
 							ThingName = URLEncoder.encode(ThingName,"UTF-8");
@@ -120,98 +119,22 @@ public class WeatherController {
 							continue;
 						}
 						//System.out.println(ThingName);
-						//tmpSplitCol[1] = DateFormat_yyyymmddhh(tmpSplitCol[1]);
-						JSONObject OpenJson_Time = (JSONObject) OpenJson.get("time");
-						String RST_Date = OpenJson_Time.get("obsTime").toString().split(" ")[0]+"T"+OpenJson_Time.get("obsTime").toString().split(" ")[1];
-						JSONArray obOpen = OpenJson.getJSONArray("weatherElement");
-						
-						String ELEV = null;
-						String WDIR = null;
-						String WDSD = null;
-						String TEMP = null;
-						String HUMD = null;
-						String PRES = null;
-						String SUN = null;
-						String H_24RNA = null;
-						String H_FX = null;
-						String H_XD = null;
-						String H_FXT = null;
-						String D_TX = null;
-						String D_TXT = null;
-						String D_TN = null;
-						String D_TNT = null;
-						
-						for(int k=0; k<obOpen.size(); k++){
-							JSONObject weatherElement = (JSONObject) obOpen.get(k);
-							String obData = weatherElement.getString("elementName");
-							switch (obData){
-							case "ELEV":
-								ELEV = weatherElement.getString("elementValue");
-					            break;
-							case "WDIR":
-								WDIR = weatherElement.getString("elementValue");
-					            break;
-							case "WDSD":
-								WDSD = weatherElement.getString("elementValue");
-					            break;
-							case "TEMP":
-								TEMP = weatherElement.getString("elementValue");
-					            break;
-							case "HUMD":
-								HUMD = weatherElement.getString("elementValue");
-					            break;
-							case "PRES":
-								PRES = weatherElement.getString("elementValue");
-					            break;
-							case "SUN":
-								SUN = weatherElement.getString("elementValue");
-					            break;
-							case "H_24RNA":
-								H_24RNA = weatherElement.getString("elementValue");
-					            break;
-							case "H_FX":
-								H_FX = weatherElement.getString("elementValue");
-					            break;
-							case "H_XD":
-								H_XD = weatherElement.getString("elementValue");
-					            break;
-							case "H_FXT":
-								H_FXT = weatherElement.getString("elementValue");
-					            break;
-							case "D_TX":
-								D_TX = weatherElement.getString("elementValue");
-					            break;
-							case "D_TXT":
-								D_TXT = weatherElement.getString("elementValue");
-					            break;
-							case "D_TN":
-								D_TN = weatherElement.getString("elementValue");
-					            break;
-							case "D_TNT":
-								D_TNT = weatherElement.getString("elementValue");
-					            break;
-					            }
-						}
-						
+						tmpSplitCol[1] = DateFormat_yyyymmddhh(tmpSplitCol[1]);
+						String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
+						String PS01 = tmpSplitCol[2];
+						String TX01 = tmpSplitCol[3];
+						String RH01 = tmpSplitCol[4];
+						String WD01 = tmpSplitCol[5];
+						String WD02 = tmpSplitCol[6];
+						String SS01 = tmpSplitCol[7];
+//						String H_24R = tmpSplitCol[8];
+//						String WS15M = tmpSplitCol[9];
+//						String WD15M = tmpSplitCol[10];
+//						String WS15T = tmpSplitCol[11];
+//						String Elev = tmpSplitCol[14];
 						if(!IsThingExist(ThingName)) {  //thing is not exist, create it
-							WHR_json.setPostThingObject_open(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),
-									RST_Date
-									,ELEV
-									,WDIR
-									,WDSD
-									,TEMP
-									,HUMD
-									,PRES
-									,SUN
-									,H_24RNA
-									,H_FX
-									,H_XD
-									,H_FXT
-									,D_TX
-									,D_TXT
-									,D_TN
-									,D_TNT);
-							Post.doJsonPost(ServerUrlBase+"/Things",WHR_json.getPostThingObject());
+							WHR_json.setPostThingObject_txt(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),RST_Date,PS01,TX01,RH01,WD01,WD02,SS01);
+							Post.doJsonPost(ServerUrlBase+"/Things",WHR_json.getPostThingObject_txt());
 						}
 						else {	//thing is exist, update it
 							// --- get datastream id start ---
@@ -229,51 +152,39 @@ public class WeatherController {
 								String PostUrl = ServerUrlBase+"/Datastreams("+DataStreamId+")/Observations";
 								String DataStreamType = DataStreamName.split("-")[2];
 								//System.out.println(PostUrl+", Type: "+DataStreamType);
-								if(DataStreamType.equals("ELEV")){
-									WHR_json.setUpdateObject(RST_Date,ELEV);
+								if(DataStreamType.equals("PS01")){
+									WHR_json.setUpdateObject(RST_Date,PS01);
 								}
-								else if(DataStreamType.equals("WDIR")) {
-									WHR_json.setUpdateObject(RST_Date,WDIR);
+								else if(DataStreamType.equals("TX01")) {
+									WHR_json.setUpdateObject(RST_Date,TX01);
 								}
-								else if(DataStreamType.equals("WDSD")){
-									WHR_json.setUpdateObject(RST_Date,WDSD);
+								else if(DataStreamType.equals("RH01")){
+									WHR_json.setUpdateObject(RST_Date,RH01);
 								}
-								else if(DataStreamType.equals("TEMP")){
-									WHR_json.setUpdateObject(RST_Date,TEMP);
+								else if(DataStreamType.equals("WD01")){
+									WHR_json.setUpdateObject(RST_Date,WD01);
 								}
-								else if(DataStreamType.equals("HUMD")){
-									WHR_json.setUpdateObject(RST_Date,HUMD);
+								else if(DataStreamType.equals("WD02")){
+									WHR_json.setUpdateObject(RST_Date,WD02);
 								}
-								else if(DataStreamType.equals("PRES")){
-									WHR_json.setUpdateObject(RST_Date,PRES);
+								else if(DataStreamType.equals("SS01")){
+									WHR_json.setUpdateObject(RST_Date,SS01);
 								}
-								else if(DataStreamType.equals("SUN")){
-									WHR_json.setUpdateObject(RST_Date,SUN);
-								}
-								else if(DataStreamType.equals("H_24RNA")){
-									WHR_json.setUpdateObject(RST_Date,H_24RNA);
-								}
-								else if(DataStreamType.equals("H_FX")){
-									WHR_json.setUpdateObject(RST_Date,H_FX);
-								}
-								else if(DataStreamType.equals("H_XD")){
-									WHR_json.setUpdateObject(RST_Date,H_XD);
-								}
-								else if(DataStreamType.equals("H_FXT")){
-									WHR_json.setUpdateObject(RST_Date,H_FXT);
-								}
-								else if(DataStreamType.equals("D_TX")){
-									WHR_json.setUpdateObject(RST_Date,D_TX);
-								}
-								else if(DataStreamType.equals("D_TXT")){
-									WHR_json.setUpdateObject(RST_Date,D_TXT);
-								}
-								else if(DataStreamType.equals("D_TN")){
-									WHR_json.setUpdateObject(RST_Date,D_TN);
-								}
-								else if(DataStreamType.equals("D_TNT")){
-									WHR_json.setUpdateObject(RST_Date,D_TNT);
-								}
+//								else if(DataStreamType.equals("PRES")){
+//									WHR_json.setUpdateObject(RST_Date,PRES);
+//								}
+//								else if(DataStreamType.equals("HUMD")){
+//									WHR_json.setUpdateObject(RST_Date,HUMD);
+//								}
+//								else if(DataStreamType.equals("TEMP")){
+//									WHR_json.setUpdateObject(RST_Date,TEMP);
+//								}
+//								else if(DataStreamType.equals("WDSD")){
+//									WHR_json.setUpdateObject(RST_Date,WDSD);
+//								}
+//								else if(DataStreamType.equals("WDIR")){
+//									WHR_json.setUpdateObject(RST_Date,WDIR);
+//								}
 								//System.out.println(RF_json.getUpdateObject());
 								Post.doJsonPost(PostUrl,WHR_json.getUpdateObject());
 							}

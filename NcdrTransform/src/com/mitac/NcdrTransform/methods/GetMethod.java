@@ -10,7 +10,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import net.sf.json.JSONObject;
+
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,6 +26,8 @@ public class GetMethod {
 	public GetMethod() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	
 
 	public JSONObject doGetJson(){
         try {
@@ -36,6 +40,28 @@ public class GetMethod {
             }
             JSONObject json = JSONObject.fromObject(sb.toString());
             is.close();
+            return json;
+        }
+        catch (IOException ex) {
+			ex.printStackTrace();
+			return null;
+		}
+	}
+	
+	public JSONObject doGetJson_https(){
+        try {
+        	URLConnection conn = new URL(Url).openConnection();
+        	TrustModifier.trust(conn);
+        	//InputStream is = new URL(Url).openStream();
+        	InputStreamReader stream = new InputStreamReader(conn.getInputStream(),"utf-8");
+            BufferedReader br = new BufferedReader(stream); //避免中文亂碼問題
+            StringBuilder sb = new StringBuilder();
+            int cp;
+            while ((cp = br.read()) != -1) {
+                sb.append((char) cp);
+            }
+            JSONObject json = JSONObject.fromObject(sb.toString());
+            br.close();
             return json;
         }
         catch (IOException ex) {

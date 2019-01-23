@@ -21,8 +21,8 @@ import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 
-import com.mitac.NcdrTransform.Weather.WeatherController;
-import com.mitac.NcdrTransform.methods.GetMethod;
+import com.mitac.NchcTransform.methods.GetMethod;
+import com.mitac.NchcTransform.Weather.WeatherController;
 
 import net.sf.json.JSON;
 import net.sf.json.JSONArray;

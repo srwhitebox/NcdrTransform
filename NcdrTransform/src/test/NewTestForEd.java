@@ -4,9 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.mitac.NcdrTransform.Weather.WeatherThingJson;
-import com.mitac.NcdrTransform.methods.GetMethod;
-import com.mitac.NcdrTransform.methods.PostMethod;
+import com.mitac.NchcTransform.methods.GetMethod;
+import com.mitac.NchcTransform.methods.PostMethod;
+import com.mitac.NchcTransform.Weather.WeatherThingJson;
 
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
@@ -31,7 +31,7 @@ public class NewTestForEd {
 		//get weather update stid array
 				GetMethod Get = new GetMethod(CreateAndUpdateUrl);
 				List<String> TmpList = Get.doGetStrList();
-				List<String> TmpList_2 = Get.doGetStrList_2();
+				List<String> TmpList_2 = Get.doGetStrList_2("");
 				//--- get rainfall station info start ---
 				GetMethod GetRain = new GetMethod(CreateNcdrUrl);
 				JSONObject GetJson = GetRain.doGetJson();//Get Json from UpdateNcdrUrl

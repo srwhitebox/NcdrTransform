@@ -14,7 +14,7 @@ import com.mitac.NcdrTransform.methods.*;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-public class WeatherController {
+public class WeatherController_realtime {
 	private String ServerUrlBase;
 	private final String CreateNcdrType = "GaugeStation";
 	private final String CreateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Sensor/JsonGaugeStation.txt";
@@ -23,13 +23,13 @@ public class WeatherController {
 	Date date = new Date();
 	
 	SimpleDateFormat SDF = new SimpleDateFormat ("yyyyMMddHH00");
-	private String CreateAndUpdateUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=rdec-key-123-45678-011121314";
+	private String CreateAndUpdateUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314";
 //	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_201809260800.csv";
 	
-	public WeatherController(String ServerUrlBase) {
+	public WeatherController_realtime(String ServerUrlBase) {
 		this.ServerUrlBase = ServerUrlBase;
 	}
-	public WeatherController() {
+	public WeatherController_realtime() {
 		// TODO Auto-generated constructor stub
 	}
 	private boolean IsThingExist(String ThingName) {
@@ -110,7 +110,7 @@ public class WeatherController {
 					if(OpenJson.get("stationId").toString().equals(tmp.getString("STID"))) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");
-						String ThingName = "氣象站_open_now-"+Stid+"-"+Stnm;
+						String ThingName = "氣象站_open-"+Stid+"-"+Stnm;
 						//System.out.println(ThingName);
 						try {
 							ThingName = URLEncoder.encode(ThingName,"UTF-8");
@@ -130,24 +130,16 @@ public class WeatherController {
 						String WDSD = null;
 						String TEMP = null;
 						String HUMD = null;
-
 						String PRES = null;
-						String n24R = null;
+						String SUN = null;
+						String H_24RNA = null;
 						String H_FX = null;
 						String H_XD = null;
 						String H_FXT = null;
-
-						String H_F10 = null;
-						String H_10D = null;
-						String H_F10T = null;
-						String H_UVI = null;
 						String D_TX = null;
-
 						String D_TXT = null;
 						String D_TN = null;
 						String D_TNT = null;
-						String D_TS = null;
-						String H_VIS = null;
 						
 						for(int k=0; k<obOpen.size(); k++){
 							JSONObject weatherElement = (JSONObject) obOpen.get(k);
@@ -171,11 +163,11 @@ public class WeatherController {
 							case "PRES":
 								PRES = weatherElement.getString("elementValue");
 					            break;
-							case "24R":
-								n24R = weatherElement.getString("elementValue");
+							case "SUN":
+								SUN = weatherElement.getString("elementValue");
 					            break;
-							case "H_F10":
-								H_F10 = weatherElement.getString("elementValue");
+							case "H_24RNA":
+								H_24RNA = weatherElement.getString("elementValue");
 					            break;
 							case "H_FX":
 								H_FX = weatherElement.getString("elementValue");
@@ -195,29 +187,14 @@ public class WeatherController {
 							case "D_TN":
 								D_TN = weatherElement.getString("elementValue");
 					            break;
-							case "H_10D":
-								H_10D = weatherElement.getString("elementValue");
-					            break;
-							case "H_F10T":
-								H_F10T = weatherElement.getString("elementValue");
-					            break;
-							case "H_UVI":
-								H_UVI = weatherElement.getString("elementValue");
-					            break;
 							case "D_TNT":
 								D_TNT = weatherElement.getString("elementValue");
-					            break;
-							case "D_TS":
-								D_TS = weatherElement.getString("elementValue");
-					            break;
-							case "H_VIS":
-								H_VIS = weatherElement.getString("elementValue");
 					            break;
 					            }
 						}
 						
 						if(!IsThingExist(ThingName)) {  //thing is not exist, create it
-							WHR_json.setPostThingObject_open_now(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),
+							WHR_json.setPostThingObject_open(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),
 									RST_Date
 									,ELEV
 									,WDIR
@@ -225,20 +202,15 @@ public class WeatherController {
 									,TEMP
 									,HUMD
 									,PRES
-									,n24R 
+									,SUN
+									,H_24RNA
 									,H_FX
 									,H_XD
 									,H_FXT
-									,H_F10
-									,H_10D
-									,H_F10T
-									,H_UVI
 									,D_TX
 									,D_TXT
 									,D_TN
-									,D_TNT
-									,D_TS
-									,H_VIS);
+									,D_TNT);
 							Post.doJsonPost(ServerUrlBase+"/Things",WHR_json.getPostThingObject());
 						}
 						else {	//thing is exist, update it
@@ -275,11 +247,11 @@ public class WeatherController {
 								else if(DataStreamType.equals("PRES")){
 									WHR_json.setUpdateObject(RST_Date,PRES);
 								}
-								else if(DataStreamType.equals("24R")){
-									WHR_json.setUpdateObject(RST_Date,n24R);
+								else if(DataStreamType.equals("SUN")){
+									WHR_json.setUpdateObject(RST_Date,SUN);
 								}
-								else if(DataStreamType.equals("H_F10")){
-									WHR_json.setUpdateObject(RST_Date,H_F10);
+								else if(DataStreamType.equals("H_24RNA")){
+									WHR_json.setUpdateObject(RST_Date,H_24RNA);
 								}
 								else if(DataStreamType.equals("H_FX")){
 									WHR_json.setUpdateObject(RST_Date,H_FX);
@@ -299,23 +271,8 @@ public class WeatherController {
 								else if(DataStreamType.equals("D_TN")){
 									WHR_json.setUpdateObject(RST_Date,D_TN);
 								}
-								else if(DataStreamType.equals("H_10D")){
-									WHR_json.setUpdateObject(RST_Date,H_10D);
-								}
-								else if(DataStreamType.equals("H_F10T")){
-									WHR_json.setUpdateObject(RST_Date,H_F10T);
-								}
-								else if(DataStreamType.equals("H_F10T")){
-									WHR_json.setUpdateObject(RST_Date,H_F10T);
-								}
 								else if(DataStreamType.equals("D_TNT")){
 									WHR_json.setUpdateObject(RST_Date,D_TNT);
-								}
-								else if(DataStreamType.equals("D_TS")){
-									WHR_json.setUpdateObject(RST_Date,D_TS);
-								}
-								else if(DataStreamType.equals("H_VIS")){
-									WHR_json.setUpdateObject(RST_Date,H_VIS);
 								}
 								//System.out.println(RF_json.getUpdateObject());
 								Post.doJsonPost(PostUrl,WHR_json.getUpdateObject());

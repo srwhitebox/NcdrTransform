@@ -1,5 +1,8 @@
 package com.mitac.NchcTransform.Rainfall;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.ParseException;
@@ -77,8 +80,8 @@ public class RainfallController {
 	//歷史資料2017以前
 	public void UpdateThing(String path) {
 		//get weather update stid array
-		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-		List<String> TmpList = Get.doGetStrList_rainfall(path);
+//		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
+//		List<String> TmpList = Get.doGetStrList_rainfall(path);
 		
 		//--- get rainfall station info start ---
 		GetMethod GetRain = new GetMethod(CreateNcdrUrl);
@@ -93,70 +96,159 @@ public class RainfallController {
 //		System.out.println("Weather Update size: "+(TmpList.size()-1));
 		
 		int ColNum=0;
-		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
-			String[] tmpSplitCol = TmpList.get(i).split(",");
-			if(i==0) {
-				ColNum = tmpSplitCol.length;
-			}
-			else {
-				if(tmpSplitCol.length==ColNum) {
-					JSONObject tmp = null;
-					for(int j=0;j<GetJsonArr.size();j++) {
-						tmp = JSONObject.fromObject(GetJsonArr.get(j));
-						if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
-							break;
+		// --- add start
+		try {
+			String CurrentLine;
+			boolean Filter_data = false;
+			//int i = 0;
+			FileReader fr = new FileReader(path);
+			BufferedReader br = new BufferedReader(fr);
+			boolean firstLine = true;
+			while ((CurrentLine = br.readLine()) != null) {
+				if(CurrentLine.contains("# stno")){
+					Filter_data = true;
+				}
+				if(Filter_data == true){
+					String[] CurrentLineArr = CurrentLine.split(" ");////////
+					String TmpStr="";
+					for(String s:CurrentLineArr) {
+						if(!s.equals("")&&!s.equals("#")) {
+							TmpStr+=s+",";
 						}
 					}
-					if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //check again, avoid STID not found
-						String Stid = tmp.getString("STID");
-						String Stnm = tmp.getString("STNM");
-						String ThingName = "雨量站_old-"+Stid+"-"+Stnm;
-						//System.out.println(ThingName);
-						try {
-							ThingName = URLEncoder.encode(ThingName,"UTF-8");
-						}
-						catch(UnsupportedEncodingException e) {
-							e.printStackTrace();
-							continue;
-						}
-						//System.out.println(ThingName);
-						tmpSplitCol[1] = DateFormat_yyyymmddhh(tmpSplitCol[1]);
-						String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
-						String PP01 = tmpSplitCol[2];
-						
-						if(!IsThingExist(ThingName)) {  //thing is not exist, create it
-							RF_json.setPostThingObject(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),tmp.getString("Elev"));
-							Post.doJsonPost(ServerUrlBase+"/Things",RF_json.getPostThingObject());
-						}
-							// --- get datastream id start ---
-							String Url = ServerUrlBase+"/Things?$filter=name%20eq%20%27"+ThingName+"%27&$expand=Datastreams";
-							GetMethod Get2 = new GetMethod(Url);
-							JSONArray tmpGetJsonArr = Get2.doGetJson().getJSONArray("value");//get all info
-							//System.out.println(tmpGetJsonArr);
-							JSONObject tmpJsonObj = JSONObject.fromObject(tmpGetJsonArr.get(0));//get thing
-							tmpGetJsonArr = tmpJsonObj.getJSONArray("Datastreams");
-							for(int j=0;j<tmpGetJsonArr.size();j++) {//for every datastreams, to get id
-								tmpJsonObj = JSONObject.fromObject(tmpGetJsonArr.get(j));
-								String DataStreamId = tmpJsonObj.getString("@iot.id");
-								String DataStreamName = tmpJsonObj.getString("name");
-								//DataStreamIdMaps.put(DataStreamId, DataStreamName);
-								String PostUrl = ServerUrlBase+"/Datastreams("+DataStreamId+")/Observations";
-								String DataStreamType = DataStreamName.split("-")[2];
-								//System.out.println(PostUrl+", Type: "+DataStreamType);
-								if(DataStreamType.equals("PP01")){
-									RF_json.setUpdateObject(RST_Date,PP01);
+					TmpStr=TmpStr.substring(0, TmpStr.length()-1);
+					String[] tmpSplitCol = TmpStr.split(",");
+					if(firstLine) {
+						ColNum = tmpSplitCol.length;
+						firstLine=false;
+					}
+					else {
+						if(tmpSplitCol.length==ColNum) {
+							JSONObject tmp = null;
+							for(int j=0;j<GetJsonArr.size();j++) {
+								tmp = JSONObject.fromObject(GetJsonArr.get(j));
+								if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
+									break;
 								}
-								Post.doJsonPost(PostUrl,RF_json.getUpdateObject());
 							}
-							//System.out.println(DataStreamIdMaps);
-							// --- get datastream id end ---
-						
-					}else{
-						//System.out.println("there is no sensor");
+							if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //check again, avoid STID not found
+								String Stid = tmp.getString("STID");
+								String Stnm = tmp.getString("STNM");
+								String ThingName = "雨量站_old-"+Stid+"-"+Stnm;
+								String ThingName2 = "雨量站_old-"+Stid+"-"+Stnm;
+								//System.out.println(ThingName);
+								try {
+									ThingName = URLEncoder.encode(ThingName,"UTF-8");
+								}
+								catch(UnsupportedEncodingException e) {
+									e.printStackTrace();
+									continue;
+								}
+								//System.out.println(ThingName);
+								tmpSplitCol[1] = DateFormat_yyyymmddhh(tmpSplitCol[1]);
+								String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
+								String PP01 = tmpSplitCol[2];
+								
+								if(!IsThingExist(ThingName)) {  //thing is not exist, create it
+									RF_json.setPostThingObject(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),tmp.getString("Elev"));
+									Post.doJsonPost(ServerUrlBase+"/Things",RF_json.getPostThingObject());
+//									System.out.println("create "+ThingName2);
+								}
+								// --- get datastream id start ---
+								String Url = ServerUrlBase+"/Things?$filter=name%20eq%20%27"+ThingName+"%27&$expand=Datastreams";
+								GetMethod Get2 = new GetMethod(Url);
+								JSONArray tmpGetJsonArr = Get2.doGetJson().getJSONArray("value");//get all info
+								//System.out.println(tmpGetJsonArr);
+								JSONObject tmpJsonObj = JSONObject.fromObject(tmpGetJsonArr.get(0));//get thing
+								tmpGetJsonArr = tmpJsonObj.getJSONArray("Datastreams");
+								for(int j=0;j<tmpGetJsonArr.size();j++) {//for every datastreams, to get id
+									tmpJsonObj = JSONObject.fromObject(tmpGetJsonArr.get(j));
+									String DataStreamId = tmpJsonObj.getString("@iot.id");
+									String DataStreamName = tmpJsonObj.getString("name");
+									//DataStreamIdMaps.put(DataStreamId, DataStreamName);
+									String PostUrl = ServerUrlBase+"/Datastreams("+DataStreamId+")/Observations";
+									String DataStreamType = DataStreamName.split("-")[2];
+									//System.out.println(PostUrl+", Type: "+DataStreamType);
+									if(DataStreamType.equals("PP01")){
+										RF_json.setUpdateObject(RST_Date,PP01);
+									}
+									Post.doJsonPost(PostUrl,RF_json.getUpdateObject());
+								}
+								//System.out.println(DataStreamIdMaps);
+								// --- get datastream id end ---
+//								System.out.println("update "+ThingName2);
+							}
+						}
 					}
 				}
 			}
 		}
+		catch (IOException ex) {
+			ex.printStackTrace();
+		}
+		// --- add end
+//		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
+//			String[] tmpSplitCol = TmpList.get(i).split(",");
+//			if(i==0) {
+//				ColNum = tmpSplitCol.length;
+//			}
+//			else {
+//				if(tmpSplitCol.length==ColNum) {
+//					JSONObject tmp = null;
+//					for(int j=0;j<GetJsonArr.size();j++) {
+//						tmp = JSONObject.fromObject(GetJsonArr.get(j));
+//						if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
+//							break;
+//						}
+//					}
+//					if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //check again, avoid STID not found
+//						String Stid = tmp.getString("STID");
+//						String Stnm = tmp.getString("STNM");
+//						String ThingName = "雨量站_old-"+Stid+"-"+Stnm;
+//						//System.out.println(ThingName);
+//						try {
+//							ThingName = URLEncoder.encode(ThingName,"UTF-8");
+//						}
+//						catch(UnsupportedEncodingException e) {
+//							e.printStackTrace();
+//							continue;
+//						}
+//						//System.out.println(ThingName);
+//						tmpSplitCol[1] = DateFormat_yyyymmddhh(tmpSplitCol[1]);
+//						String RST_Date = tmpSplitCol[1].split(" ")[0]+"T"+tmpSplitCol[1].split(" ")[1];
+//						String PP01 = tmpSplitCol[2];
+//						
+//						if(!IsThingExist(ThingName)) {  //thing is not exist, create it
+//							RF_json.setPostThingObject(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),tmp.getString("Elev"));
+//							Post.doJsonPost(ServerUrlBase+"/Things",RF_json.getPostThingObject());
+//						}
+//							// --- get datastream id start ---
+//							String Url = ServerUrlBase+"/Things?$filter=name%20eq%20%27"+ThingName+"%27&$expand=Datastreams";
+//							GetMethod Get2 = new GetMethod(Url);
+//							JSONArray tmpGetJsonArr = Get2.doGetJson().getJSONArray("value");//get all info
+//							//System.out.println(tmpGetJsonArr);
+//							JSONObject tmpJsonObj = JSONObject.fromObject(tmpGetJsonArr.get(0));//get thing
+//							tmpGetJsonArr = tmpJsonObj.getJSONArray("Datastreams");
+//							for(int j=0;j<tmpGetJsonArr.size();j++) {//for every datastreams, to get id
+//								tmpJsonObj = JSONObject.fromObject(tmpGetJsonArr.get(j));
+//								String DataStreamId = tmpJsonObj.getString("@iot.id");
+//								String DataStreamName = tmpJsonObj.getString("name");
+//								//DataStreamIdMaps.put(DataStreamId, DataStreamName);
+//								String PostUrl = ServerUrlBase+"/Datastreams("+DataStreamId+")/Observations";
+//								String DataStreamType = DataStreamName.split("-")[2];
+//								//System.out.println(PostUrl+", Type: "+DataStreamType);
+//								if(DataStreamType.equals("PP01")){
+//									RF_json.setUpdateObject(RST_Date,PP01);
+//								}
+//								Post.doJsonPost(PostUrl,RF_json.getUpdateObject());
+//							}
+//							//System.out.println(DataStreamIdMaps);
+//							// --- get datastream id end ---
+//						
+//					}
+//				}
+//			}
+//		}
 	}
 //	public void CreateThing() {
 //		GetMethod Get = new GetMethod(CreateAndUpdateUrl);

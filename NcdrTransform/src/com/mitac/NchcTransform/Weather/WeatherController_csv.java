@@ -254,6 +254,7 @@ public class WeatherController_csv {
 				}
 			}
 		}
+//		System.out.println("File: "+path);
 	}
 //	public void CreateThing() {
 //		GetMethod Get = new GetMethod(CreateAndUpdateUrl);

@@ -97,6 +97,7 @@ public class GetMethod {
     		FileReader fr = new FileReader(path);
     		BufferedReader br = new BufferedReader(fr);
     		while ((CurrentLine = br.readLine()) != null) {
+//    			System.out.println(CurrentLine);
     			if(CurrentLine.contains("# stno")){
     				Filter_data = true;
     			}
@@ -104,7 +105,8 @@ public class GetMethod {
     				ResList.add(CurrentLine);
     			}
     		}
-    		fr.close();
+//    		fr.close();
+    		br.close();
     		List<String> tmpSplitCol = new ArrayList<>();
     		String dataAdd = "";
     		for (int j = 0; j < ResList.size(); j++) {
@@ -136,7 +138,7 @@ public class GetMethod {
    								 new File(path)));
    		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"MS950"));
    		 while ((CurrentLine = br.readLine()) != null) {
-   		 ResList.add(CurrentLine);
+   			 ResList.add(CurrentLine);
    		 }
 		 in.close();
             return ResList;
@@ -160,24 +162,34 @@ public class GetMethod {
     				Filter_data = true;
     			}
     			if(Filter_data == true){
-    				ResList.add(CurrentLine);
+//    				ResList.add(CurrentLine);
+    				String[] CurrentLineArr = CurrentLine.split(" ");////////
+    				String TmpStr="";
+    				for(String s:CurrentLineArr) {
+    					if(!s.equals("")&&!s.equals("#")) {
+    						TmpStr+=s+",";
+    					}
+    				}
+    				TmpStr=TmpStr.substring(0, TmpStr.length()-1);
+    				ResList.add(TmpStr);
     			}
     		}
     		fr.close();
-    		List<String> tmpSplitCol = new ArrayList<>();
-    		String dataAdd = "";
-    		for (int j = 0; j < ResList.size(); j++) {
-    			String[] tmpSplitCol_full = ResList.get(j).split(" ");
-    			// System.out.println(tmpSplitCol_full[4].trim());
-    			for (String data : tmpSplitCol_full) {
-    				if (!data.trim().isEmpty() && !data.trim().equals("#")) {
-    					dataAdd = dataAdd + data + ",";
-    				}
-    			}
-    			tmpSplitCol.add(dataAdd.substring(0, dataAdd.length() - 1));
-    			dataAdd = "";
-    		}
-            return tmpSplitCol;
+//    		List<String> tmpSplitCol = new ArrayList<>();
+//    		String dataAdd = "";
+//    		for (int j = 0; j < ResList.size(); j++) {
+//    			String[] tmpSplitCol_full = ResList.get(j).split(" ");
+//    			// System.out.println(tmpSplitCol_full[4].trim());
+//    			for (String data : tmpSplitCol_full) {
+//    				if (!data.trim().isEmpty() && !data.trim().equals("#")) {
+//    					dataAdd = dataAdd + data + ",";
+//    				}
+//    			}
+//    			tmpSplitCol.add(dataAdd.substring(0, dataAdd.length() - 1));
+//    			dataAdd = "";
+//    		}
+//            return tmpSplitCol;
+    		return ResList;////
         }
         catch (IOException ex) {
 			ex.printStackTrace();
@@ -198,24 +210,33 @@ public class GetMethod {
     				Filter_data = true;
     			}
     			if(Filter_data == true){
-    				ResList.add(CurrentLine);
+    				String[] CurrentLineArr = CurrentLine.split(" ");////////
+    				String TmpStr="";
+    				for(String s:CurrentLineArr) {
+    					if(!s.equals("")&&!s.equals("#")) {
+    						TmpStr+=s+",";
+    					}
+    				}
+    				TmpStr=TmpStr.substring(0, TmpStr.length()-1);
+    				ResList.add(TmpStr);
     			}
     		}
     		fr.close();
-    		List<String> tmpSplitCol = new ArrayList<>();
-    		String dataAdd = "";
-    		for (int j = 0; j < ResList.size(); j++) {
-    			String[] tmpSplitCol_full = ResList.get(j).split(" ");
-    			// System.out.println(tmpSplitCol_full[4].trim());
-    			for (String data : tmpSplitCol_full) {
-    				if (!data.trim().isEmpty() && !data.trim().equals("#")) {
-    					dataAdd = dataAdd + data + ",";
-    				}
-    			}
-    			tmpSplitCol.add(dataAdd.substring(0, dataAdd.length() - 1));
-    			dataAdd = "";
-    		}
-            return tmpSplitCol;
+//    		List<String> tmpSplitCol = new ArrayList<>();
+//    		String dataAdd = "";
+//    		for (int j = 0; j < ResList.size(); j++) {
+//    			String[] tmpSplitCol_full = ResList.get(j).split(" ");
+//    			// System.out.println(tmpSplitCol_full[4].trim());
+//    			for (String data : tmpSplitCol_full) {
+//    				if (!data.trim().isEmpty() && !data.trim().equals("#")) {
+//    					dataAdd = dataAdd + data + ",";
+//    				}
+//    			}
+//    			tmpSplitCol.add(dataAdd.substring(0, dataAdd.length() - 1));
+//    			dataAdd = "";
+//    		}
+//            return tmpSplitCol;
+    		return ResList;////
         }
         catch (IOException ex) {
 			ex.printStackTrace();
@@ -233,7 +254,7 @@ public class GetMethod {
    								 new File(path)));
    		 BufferedReader br = new BufferedReader(new InputStreamReader(in,"MS950"));
    		 while ((CurrentLine = br.readLine()) != null) {
-   		 ResList.add(CurrentLine);
+   			 ResList.add(CurrentLine);
    		 }
 		 in.close();
             return ResList;

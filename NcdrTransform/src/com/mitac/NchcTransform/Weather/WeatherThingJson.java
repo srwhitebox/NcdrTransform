@@ -1609,7 +1609,7 @@ public class WeatherThingJson {
 	
 	public void setPostThingObject_txt(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String RST_Date,String PS01,String TX01,String RH01,String WD01,String WD02,String SS01){
 		PostThingObject_txt="{\r\n" + 
-				"\"name\": \"氣象站_old-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"name\": \"氣象站_old_auto-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"氣象站-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\":\""+STID+"\",\r\n" + 

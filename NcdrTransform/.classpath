@@ -2,12 +2,11 @@
 <classpath>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/srwhitebox/Documents/git_SR/NcdrTransform/NcdrTransform/commons-beanutils-1.7.jar"/>
-	<classpathentry kind="lib" path="C:/Users/srwhitebox/Documents/git_SR/NcdrTransform/NcdrTransform/commons-collections.jar"/>
-	<classpathentry kind="lib" path="C:/Users/srwhitebox/Documents/git_SR/NcdrTransform/NcdrTransform/commons-lang.jar"/>
-	<classpathentry kind="lib" path="C:/Users/srwhitebox/Documents/git_SR/NcdrTransform/NcdrTransform/commons-logging-1.1.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/srwhitebox/Documents/git_SR/NcdrTransform/NcdrTransform/ezmorph.jar"/>
-	<classpathentry kind="lib" path="C:/Users/srwhitebox/Documents/git_SR/NcdrTransform/NcdrTransform/json-lib-2.2.2-jdk15.jar"/>
-	<classpathentry kind="lib" path="C:/Users/srwhitebox/Desktop/java-json.jar"/>
+	<classpathentry kind="lib" path="C:/EgbertFileSystem/Tasks/OGCSensorThing/NCHC/NchcProject/NchcTransform/commons-beanutils-1.7.jar"/>
+	<classpathentry kind="lib" path="C:/EgbertFileSystem/Tasks/OGCSensorThing/NCHC/NchcProject/NchcTransform/commons-collections.jar"/>
+	<classpathentry kind="lib" path="C:/EgbertFileSystem/Tasks/OGCSensorThing/NCHC/NchcProject/NchcTransform/commons-lang.jar"/>
+	<classpathentry kind="lib" path="C:/EgbertFileSystem/Tasks/OGCSensorThing/NCHC/NchcProject/NchcTransform/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/EgbertFileSystem/Tasks/OGCSensorThing/NCHC/NchcProject/NchcTransform/ezmorph.jar"/>
+	<classpathentry kind="lib" path="C:/EgbertFileSystem/Tasks/OGCSensorThing/NCHC/NchcProject/NchcTransform/json-lib-2.2.2-jdk15.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

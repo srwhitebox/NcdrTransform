@@ -1,74 +1,45 @@
 package com.mitac.NchcTransform.main;
 
+import java.io.File;
+
 import com.mitac.NchcTransform.Rainfall.*;
 import com.mitac.NchcTransform.Weather.*;
 
 public class TransformMain {
 
 	public static void main(String[] args) {
-		String UsageStr = "Usage: java -jar NcdrTransform.jar [MainClass] [SensorthingServerUrl] [Option] [DataType]\nOption:\n-C, To create Things.\n-U, To update observations.\n\nDataType:\n全部資料:ALL,\nCCTV:CCTV,\n水位站:WaterLevel,\n雨量站:Rainfall,\n氣象站:Weather";
+		String UsageStr = "Usage: java -jar NcdrTransform.jar [MainClass] [SensorthingServerUrl] [Option] [DataType] [FilePath/FolderPath]\nOption:\n-U, To update Observations or create Thing.\n\nDataType:\nA: 歷史資料-局屬氣象站(1998-2017)\r\n" + 
+				"B: 歷史資料-局屬氣象站(2018)\r\n" + 
+				"C: 歷史資料-自動氣象站(1998-2007、2008-2018)\r\n" + 
+				"D: 歷史資料-雨量站(1998-2017)\r\n" + 
+				"E: 歷史資料-雨量站(2018)\r\n" + 
+				"F: 即時資料-自動氣象站-氣象觀測資料\r\n" + 
+				"G: 即時資料-局屬氣象站-現在天氣觀測報告\r\n" + 
+				"H: 即時資料-自動雨量站-雨量觀測資料";
 		if(args.length<4) {
 			System.out.println(UsageStr);
 			return;
 		}
 		String Path = null;
 		String OgcServerBaseUrl = args[1];
-		//String OgcServerBaseUrl = "http://10.11.10.61:8080/FROST-Server/v1.0";
 		String Op = args[2];
-		//String Op = "-C";
-		//String Op = "-U";
 		String DataType = args[3];
-		//String DataType = "ALL";
-		//String DataType = "WaterLevel";
-		if(!DataType.equals("F")&&!DataType.equals("G")&&!DataType.equals("H"))
-		Path = args[4];
+		if(!DataType.equals("F")&&!DataType.equals("G")&&!DataType.equals("H")) {
+			Path = args[4];
+		}
 		
 		
 		//initialize
-		//WaterLevelController WL_Controller = new WaterLevelController(OgcServerBaseUrl);
-		//ReservoirWaterLevelController RWL_Controller = new ReservoirWaterLevelController(OgcServerBaseUrl);
 		RainfallController RF_Controller = new RainfallController(OgcServerBaseUrl);
 		RainfallController_csv RF_Controller_csv = new RainfallController_csv(OgcServerBaseUrl);
 		RainfallController_realtime RF_Controller_realtime = new RainfallController_realtime(OgcServerBaseUrl);
-		//CctvController CCTV_Controller = new CctvController(OgcServerBaseUrl);
 		WeatherController WHR_Controller = new WeatherController(OgcServerBaseUrl);
 		WeatherController_txt WHR_Controller_txt = new WeatherController_txt(OgcServerBaseUrl);
 		WeatherController_csv WHR_Controller_csv = new WeatherController_csv(OgcServerBaseUrl);
 		WeatherController_auto WHR_Controller_auto = new WeatherController_auto(OgcServerBaseUrl);
 		WeatherController_realtime WHR_Controller_realtime = new WeatherController_realtime(OgcServerBaseUrl);
-		//WeatherController_auto WHR_Controller_auto = new WeatherController_auto(OgcServerBaseUrl);
 		
-		if(Op.equals("-C")) {
-			System.out.print("Creating ");
-			if(DataType.equals("ALL")) {
-				System.out.println("ALL...");
-				//CCTV_Controller.CreateThing();
-				//WL_Controller.CreateThing();
-				//RWL_Controller.CreateThing();
-				//RF_Controller.UpdateThing();
-				WHR_Controller.UpdateThing();
-			}
-			else if(DataType.equals("CCTV")) {
-				System.out.println("CCTV...");
-				//CCTV_Controller.CreateThing();
-			}
-			else if(DataType.equals("WaterLevel")) {
-				System.out.println("WaterLevel...");
-				//WL_Controller.CreateThing();
-				//RWL_Controller.CreateThing();
-			}
-			else if(DataType.equals("Rainfall")) {
-				System.out.println("Rainfall...");
-				//RF_Controller.UpdateThing();
-			}
-			else {
-				System.out.println("Error:");
-				System.out.println(UsageStr);
-				return;
-			}
-			System.out.println("Done.");
-		}
-		else if(Op.equals("-U")){
+		if(Op.equals("-U")){
 			System.out.print("Updating ");
 			if(DataType.equals("A")) {
 				System.out.println("局屬氣象站(txt)");
@@ -76,7 +47,15 @@ public class TransformMain {
 			}
 			else if(DataType.equals("B")) {
 				System.out.println("局屬氣象站(2018_csv)");
-				WHR_Controller_csv.UpdateThing(Path);
+				try{
+					File FolderPath = new File(Path);
+					File[] listOfFiles = FolderPath.listFiles();
+					for (File f : listOfFiles) {
+						WHR_Controller_csv.UpdateThing(f.getPath());
+					}
+				}catch(Exception e) {
+			    	e.printStackTrace();
+			    }
 			}
 			else if(DataType.equals("C")) {
 				System.out.println("自動氣象站(txt)");
@@ -88,7 +67,15 @@ public class TransformMain {
 			}
 			else if(DataType.equals("E")) {
 				System.out.println("雨量站(csv)");
-				RF_Controller_csv.UpdateThing(Path);
+				try{
+					File FolderPath = new File(Path);
+					File[] listOfFiles = FolderPath.listFiles();
+					for (File f : listOfFiles) {
+						RF_Controller_csv.UpdateThing(f.getPath());
+					}
+				}catch(Exception e) {
+			    	e.printStackTrace();
+			    }
 			}
 			else if(DataType.equals("F")) {
 				System.out.println("即時資料(自動氣象站-氣象觀測資料)");

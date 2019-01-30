@@ -28,16 +28,15 @@ public class TransformMain {
 			Path = args[4];
 		}
 		
-		
 		//initialize
-		RainfallController RF_Controller = new RainfallController(OgcServerBaseUrl);
-		RainfallController_csv RF_Controller_csv = new RainfallController_csv(OgcServerBaseUrl);
-		RainfallController_realtime RF_Controller_realtime = new RainfallController_realtime(OgcServerBaseUrl);
-		WeatherController WHR_Controller = new WeatherController(OgcServerBaseUrl);
-		WeatherController_txt WHR_Controller_txt = new WeatherController_txt(OgcServerBaseUrl);
-		WeatherController_csv WHR_Controller_csv = new WeatherController_csv(OgcServerBaseUrl);
-		WeatherController_auto WHR_Controller_auto = new WeatherController_auto(OgcServerBaseUrl);
-		WeatherController_realtime WHR_Controller_realtime = new WeatherController_realtime(OgcServerBaseUrl);
+		WeatherController_txt WHR_Controller_txt = new WeatherController_txt(OgcServerBaseUrl);//for A
+		WeatherController_csv WHR_Controller_csv = new WeatherController_csv(OgcServerBaseUrl);// for B
+		WeatherController_auto WHR_Controller_auto = new WeatherController_auto(OgcServerBaseUrl);// for C
+		RainfallController RF_Controller = new RainfallController(OgcServerBaseUrl);// for D
+		RainfallController_csv RF_Controller_csv = new RainfallController_csv(OgcServerBaseUrl);// for E
+		WeatherController_realtime WHR_Controller_realtime = new WeatherController_realtime(OgcServerBaseUrl);// for F
+		WeatherController WHR_Controller = new WeatherController(OgcServerBaseUrl);// for G
+		RainfallController_realtime RF_Controller_realtime = new RainfallController_realtime(OgcServerBaseUrl);// for H
 		
 		if(Op.equals("-U")){
 			System.out.print("Updating ");

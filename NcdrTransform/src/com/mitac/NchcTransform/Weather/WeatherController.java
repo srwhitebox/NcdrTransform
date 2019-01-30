@@ -16,15 +16,10 @@ import net.sf.json.JSONObject;
 
 public class WeatherController {
 	private String ServerUrlBase;
-	private final String CreateNcdrType = "GaugeStation";
-	private final String CreateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Sensor/JsonGaugeStation.txt";
-//	private final String UpdateNcdrType = "Realtime_vCWB_nGauge_1DayJSON";
-//	private final String UpdateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Gauge/GaugeJson.txt";
 	Date date = new Date();
 	
 	SimpleDateFormat SDF = new SimpleDateFormat ("yyyyMMddHH00");
 	private String CreateAndUpdateUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0003-001?Authorization=rdec-key-123-45678-011121314";
-//	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_201809260800.csv";
 	
 	public WeatherController(String ServerUrlBase) {
 		this.ServerUrlBase = ServerUrlBase;
@@ -80,13 +75,6 @@ public class WeatherController {
 		JSONObject OpenDataList = Get.doGetJson_https().getJSONObject("records");
 		JSONArray GetJsonArr_Open = OpenDataList.getJSONArray("location");
 		
-		//--- get rainfall station info start ---
-		GetMethod GetRain = new GetMethod(CreateNcdrUrl);
-		JSONObject GetJson = GetRain.doGetJson();//Get Json from UpdateNcdrUrl
-//		String RST_DATE = GetJson.getString("Rst_date");
-		JSONArray GetJsonArr = GetJson.getJSONArray(CreateNcdrType);
-		//--- get rainfall station info end ---
-		
 		WeatherThingJson WHR_json = new WeatherThingJson();
 		PostMethod Post = new PostMethod();
 		
@@ -100,13 +88,42 @@ public class WeatherController {
 			}
 			else {
 				if(true) {
-					JSONObject tmp = null;
-					for(int j=0;j<GetJsonArr.size();j++) {
-						tmp = JSONObject.fromObject(GetJsonArr.get(j));
-						if(OpenJson.get("stationId").toString().equals(tmp.getString("STID"))) { //find it, break
-							break;
-						}
+					// add ------------------------------ start
+					JSONObject tmp = new JSONObject();
+					String STID = "";
+					String STNM = "";
+					String LAT = "";
+					String LON = "";
+					String CityName = "";
+					String City_SN = "";
+					String TownName = "";
+					String Town_SN = "";
+					String Attribute = "";
+					JSONArray tmpArr = OpenJson.getJSONArray("parameter");
+					STID = OpenJson.getString("stationId");
+					STNM = OpenJson.getString("locationName");
+					LAT = OpenJson.getString("lat");
+					LON = OpenJson.getString("lon");
+					for(int k=0;k<tmpArr.size();k++) {
+						JSONObject Obj_parameter = tmpArr.getJSONObject(k);
+						if(Obj_parameter.getString("parameterName").equals("CITY")) CityName=Obj_parameter.getString("parameterValue");
+						if(Obj_parameter.getString("parameterName").equals("CITY_SN")) City_SN=Obj_parameter.getString("parameterValue");
+						if(Obj_parameter.getString("parameterName").equals("TOWN")) TownName=Obj_parameter.getString("parameterValue");
+						if(Obj_parameter.getString("parameterName").equals("TOWN_SN")) Town_SN=Obj_parameter.getString("parameterValue");
+						if(Obj_parameter.getString("parameterName").equals("ATTRIBUTE")) Attribute=Obj_parameter.getString("parameterValue");
 					}
+//					System.out.println(STID+","+STNM+","+LAT+","+LON+","+CityName+","+City_SN+","+TownName+","+Town_SN+","+Attribute);
+					tmp = new JSONObject();
+					tmp.put("STID", STID);
+					tmp.put("STNM", STNM);
+					tmp.put("LAT", LAT);
+					tmp.put("LON", LON);
+					tmp.put("CityName", CityName);
+					tmp.put("City_SN", City_SN);
+					tmp.put("TownName", TownName);
+					tmp.put("Town_SN", Town_SN);
+					tmp.put("Attribute", Attribute);
+					// add ------------------------------- end
 					if(OpenJson.get("stationId").toString().equals(tmp.getString("STID"))) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");

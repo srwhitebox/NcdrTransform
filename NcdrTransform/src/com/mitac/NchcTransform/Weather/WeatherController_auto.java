@@ -19,15 +19,9 @@ import net.sf.json.JSONObject;
 
 public class WeatherController_auto {
 	private String ServerUrlBase;
-	private final String CreateNcdrType = "GaugeStation";
-	private final String CreateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Sensor/JsonGaugeStation.txt";
-//	private final String UpdateNcdrType = "Realtime_vCWB_nGauge_1DayJSON";
-//	private final String UpdateNcdrUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/JSON/Gauge/GaugeJson.txt";
 	Date date = new Date();
 	
 	SimpleDateFormat SDF = new SimpleDateFormat ("yyyyMMddHH00");
-	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_"+SDF.format(date)+".csv";
-//	private String CreateAndUpdateUrl = "http://ncdrfile.ncdr.nat.gov.tw/filestorage/INTERFACING/NCDR/QPESUMS/AST_LST/AST_201809260800.csv";
 	
 	public WeatherController_auto(String ServerUrlBase) {
 		this.ServerUrlBase = ServerUrlBase;
@@ -79,21 +73,15 @@ public class WeatherController_auto {
 	//歷史資料2017以前
 	public void UpdateThing(String path) {
 		//get weather update stid array
-//		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-//		List<String> TmpList = Get.doGetStrList_auto(path);
-		
-		//--- get rainfall station info start ---
-		GetMethod GetRain = new GetMethod(CreateNcdrUrl);
-		JSONObject GetJson = GetRain.doGetJson();//Get Json from UpdateNcdrUrl
-//		String RST_DATE = GetJson.getString("Rst_date");
-		JSONArray GetJsonArr = GetJson.getJSONArray(CreateNcdrType);
-		//--- get rainfall station info end ---
 		
 		WeatherThingJson WHR_json = new WeatherThingJson();
 		PostMethod Post = new PostMethod();
 		
 //		System.out.println("Weather Update size: "+(TmpList.size()-1));
-		
+		// --- add start ---------
+		JSONArray tmpArr_StidList = new GetStidJsonArray().getJsonArr();
+		JSONObject tmp = new JSONObject();
+		// --- add stop ---------
 		
 		int ColNum=0;
 		// --- add start
@@ -124,9 +112,8 @@ public class WeatherController_auto {
 					}
 					else {
 						if(tmpSplitCol.length==ColNum) {
-							JSONObject tmp = null;
-							for(int j=0;j<GetJsonArr.size();j++) {
-								tmp = JSONObject.fromObject(GetJsonArr.get(j));
+							for(int o=0;o<tmpArr_StidList.size();o++) {
+								tmp = tmpArr_StidList.getJSONObject(o);
 								if(tmpSplitCol[0].equals(tmp.getString("STID"))) { //find it, break
 									break;
 								}

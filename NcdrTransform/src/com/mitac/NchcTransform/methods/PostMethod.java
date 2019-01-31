@@ -28,6 +28,8 @@ public class PostMethod {
 	        while( (line = br.readLine()) != null ) {
 	            System.out.println(line);
 	        }
+	        br.close();
+	        isr.close();
 		}catch(Exception e){
 			e.printStackTrace();
 			//System.out.println(Content);

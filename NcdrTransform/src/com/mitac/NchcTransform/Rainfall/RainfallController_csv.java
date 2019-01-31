@@ -1,5 +1,7 @@
 package com.mitac.NchcTransform.Rainfall;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.ParseException;
@@ -98,6 +100,7 @@ public class RainfallController_csv {
 		// --- add stop ---------
 		
 		int ColNum=0;
+		int countSTID=0;
 		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
 			String[] tmpSplitCol = TmpList.get(i).split(",");
 			for(int i1=0; i1<tmpSplitCol.length; i1++){
@@ -114,11 +117,20 @@ public class RainfallController_csv {
 				if(tmpSplitCol.length==ColNum) {
 					for(int o=0;o<tmpArr_StidList.size();o++) {
 						tmp = tmpArr_StidList.getJSONObject(o);
-						if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //find it, break
+						if(tmpSplitCol[1].equals(tmp.getString("STID").substring(0, 5))) { //find it, break
+							countSTID++;
+							//break;
+						}
+					}
+					for(int o=0;o<tmpArr_StidList.size();o++) {
+						tmp = tmpArr_StidList.getJSONObject(o);
+						if(tmpSplitCol[1].equals(tmp.getString("STID").substring(0, 5))) { //find it, break
+							//countSTID++;
 							break;
 						}
 					}
-					if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //check again, avoid STID not found
+					//System.out.println("why========="+tmpSplitCol[1]);
+					if(countSTID==1) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");
 						String ThingName = "雨量站_old_2018-"+Stid+"-"+Stnm;
@@ -136,9 +148,12 @@ public class RainfallController_csv {
 						String DD_RMN = tmpSplitCol[3];
 						
 						if(!IsThingExist(ThingName)) {  //thing is not exist, create it
-							RF_json.setPostThingObject(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),tmp.getString("Elev"));
+							RF_json.setPostThingObject_csv(tmp.getString("STID"),tmp.getString("STNM"),tmp.getString("LAT"),tmp.getString("LON"),tmp.getString("CityName"),tmp.getString("City_SN"),tmp.getString("TownName"),tmp.getString("Town_SN"),tmp.getString("Attribute"),"0");
+							//System.out.println("thing=========="+RF_json.getPostThingObject());
 							Post.doJsonPost(ServerUrlBase+"/Things",RF_json.getPostThingObject());
 						}
+						
+						//System.out.println(ThingName);
 							// --- get datastream id start ---
 							String Url = ServerUrlBase+"/Things?$filter=name%20eq%20%27"+ThingName+"%27&$expand=Datastreams";
 							GetMethod Get2 = new GetMethod(Url);
@@ -153,17 +168,32 @@ public class RainfallController_csv {
 								//DataStreamIdMaps.put(DataStreamId, DataStreamName);
 								String PostUrl = ServerUrlBase+"/Datastreams("+DataStreamId+")/Observations";
 								String DataStreamType = DataStreamName.split("-")[2];
-								//System.out.println(PostUrl+", Type: "+DataStreamType);
+//								System.out.println(PostUrl+", Type: "+DataStreamType);
 								if(DataStreamType.equals("DD_RMN")){
 									RF_json.setUpdateObject(RST_Date,DD_RMN);
 								}
+								//System.out.println("update=========="+RF_json.getUpdateObject());
 								Post.doJsonPost(PostUrl,RF_json.getUpdateObject());
 							}
 							//System.out.println(DataStreamIdMaps);
 							// --- get datastream id end ---
-						
+							countSTID = 0;
 					}else{
 						//System.out.println("there is no sensor");
+						String newPath = path.replace(".csv", "_log.txt");
+						FileWriter fw;
+						try {
+							fw = new FileWriter(newPath, true);
+							fw.write("Warning countSTID=" + countSTID + " STNM=" + tmp.getString("STNM") + " STID=" + tmp.getString("STID") + " CSVid=" + tmpSplitCol[1] + "\r\n");
+							fw.flush();
+							fw.close();
+							
+							countSTID = 0;
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
 					}
 				}
 			}

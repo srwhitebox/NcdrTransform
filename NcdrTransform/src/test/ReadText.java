@@ -22,6 +22,7 @@ import javax.net.ssl.SSLSession;
 import javax.net.ssl.TrustManager;
 
 import com.mitac.NchcTransform.methods.GetMethod;
+import com.mitac.NchcTransform.methods.GetStidJsonArray;
 import com.mitac.NchcTransform.Weather.WeatherController;
 
 import net.sf.json.JSON;
@@ -270,90 +271,90 @@ public class ReadText {
 //		JSONArray GetJsonArr = GetJson.getJSONArray("location");
 //		Object jsonOb = GetJsonArr.get(0);
 		
-		String CreateAndUpdateUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314";
-		//String testJson = "{\"lat\":\"24.778333\",\"lon\":\"121.494583\",\"locationName\":\"福山\",\"stationId\":\"C0A560\",\"time\":{\"obsTime\":\"2019-01-22 16:00:00\"},\"weatherElement\":[{\"elementName\":\"ELEV\",\"elementValue\":\"405.0\"},{\"elementName\":\"WDIR\",\"elementValue\":\"291\"},{\"elementName\":\"WDSD\",\"elementValue\":\"0.6\"},{\"elementName\":\"TEMP\",\"elementValue\":\"10.0\"},{\"elementName\":\"HUMD\",\"elementValue\":\"0.88\"},{\"elementName\":\"PRES\",\"elementValue\":\"972.1\"},{\"elementName\":\"SUN\",\"elementValue\":\"-99\"},{\"elementName\":\"H_24R\",\"elementValue\":\"0.0\"},{\"elementName\":\"H_FX\",\"elementValue\":\"-99\"},{\"elementName\":\"H_XD\",\"elementValue\":\"-99\"},{\"elementName\":\"H_FXT\",\"elementValue\":\"-99\"},{\"elementName\":\"D_TX\",\"elementValue\":\"12.40\"},{\"elementName\":\"D_TXT\",\"elementValue\":\"null\"},{\"elementName\":\"D_TN\",\"elementValue\":\"9.80\"},{\"elementName\":\"D_TNT\",\"elementValue\":\"null\"}],\"parameter\":[{\"parameterName\":\"CITY\",\"parameterValue\":\"新北市\"},{\"parameterName\":\"CITY_SN\",\"parameterValue\":\"06\"},{\"parameterName\":\"TOWN\",\"parameterValue\":\"烏來區\"},{\"parameterName\":\"TOWN_SN\",\"parameterValue\":\"061\"}]}";
-		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
-		JSONObject OpenDataList = Get.doGetJson_https().getJSONObject("records");
-		JSONArray GetJsonArr_Open = OpenDataList.getJSONArray("location");
-		for(int i=0;i<3;i++){
-			JSONObject OpenJson = (JSONObject) GetJsonArr_Open.get(i);
-			
-			JSONObject OpenJson_Time = (JSONObject) OpenJson.get("time");
-			String RST_Date = OpenJson_Time.get("obsTime").toString().split(" ")[0]+"T"+OpenJson_Time.get("obsTime").toString().split(" ")[1];
-			JSONArray obOpen = OpenJson.getJSONArray("weatherElement");
-			
-			String ELEV = null;
-			String WDIR = null;
-			String WDSD = null;
-			String TEMP = null;
-			String HUMD = null;
-			String PRES = null;
-			String SUN = null;
-			String H_24RNA = null;
-			String H_FX = null;
-			String H_XD = null;
-			String H_FXT = null;
-			String D_TX = null;
-			String D_TXT = null;
-			String D_TN = null;
-			String D_TNT = null;
-			
-			for(int k=0; k<obOpen.size(); k++){
-				JSONObject weatherElement = (JSONObject) obOpen.get(k);
-				String obData = weatherElement.getString("elementName");
-				switch (obData){
-				case "ELEV":
-					ELEV = weatherElement.getString("elementValue");
-		            break;
-				case "WDIR":
-					WDIR = weatherElement.getString("elementValue");
-		            break;
-				case "WDSD":
-					WDSD = weatherElement.getString("elementValue");
-		            break;
-				case "TEMP":
-					TEMP = weatherElement.getString("elementValue");
-		            break;
-				case "HUMD":
-					HUMD = weatherElement.getString("elementValue");
-		            break;
-				case "PRES":
-					PRES = weatherElement.getString("elementValue");
-		            break;
-				case "SUN":
-					SUN = weatherElement.getString("elementValue");
-		            break;
-				case "H_24RNA":
-					H_24RNA = weatherElement.getString("elementValue");
-		            break;
-				case "H_FX":
-					H_FX = weatherElement.getString("elementValue");
-		            break;
-				case "H_XD":
-					H_XD = weatherElement.getString("elementValue");
-		            break;
-				case "H_FXT":
-					H_FXT = weatherElement.getString("elementValue");
-		            break;
-				case "D_TX":
-					D_TX = weatherElement.getString("elementValue");
-		            break;
-				case "D_TXT":
-					D_TXT = weatherElement.getString("elementValue");
-		            break;
-				case "D_TN":
-					D_TN = weatherElement.getString("elementValue");
-		            break;
-				case "D_TNT":
-					D_TNT = weatherElement.getString("elementValue");
-		            break;
-		            }
-			}
-			
-			
-			System.out.println(OpenJson.get("stationId").toString());
-			
-		}
+//		String CreateAndUpdateUrl = "https://opendata.cwb.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=rdec-key-123-45678-011121314";
+//		//String testJson = "{\"lat\":\"24.778333\",\"lon\":\"121.494583\",\"locationName\":\"福山\",\"stationId\":\"C0A560\",\"time\":{\"obsTime\":\"2019-01-22 16:00:00\"},\"weatherElement\":[{\"elementName\":\"ELEV\",\"elementValue\":\"405.0\"},{\"elementName\":\"WDIR\",\"elementValue\":\"291\"},{\"elementName\":\"WDSD\",\"elementValue\":\"0.6\"},{\"elementName\":\"TEMP\",\"elementValue\":\"10.0\"},{\"elementName\":\"HUMD\",\"elementValue\":\"0.88\"},{\"elementName\":\"PRES\",\"elementValue\":\"972.1\"},{\"elementName\":\"SUN\",\"elementValue\":\"-99\"},{\"elementName\":\"H_24R\",\"elementValue\":\"0.0\"},{\"elementName\":\"H_FX\",\"elementValue\":\"-99\"},{\"elementName\":\"H_XD\",\"elementValue\":\"-99\"},{\"elementName\":\"H_FXT\",\"elementValue\":\"-99\"},{\"elementName\":\"D_TX\",\"elementValue\":\"12.40\"},{\"elementName\":\"D_TXT\",\"elementValue\":\"null\"},{\"elementName\":\"D_TN\",\"elementValue\":\"9.80\"},{\"elementName\":\"D_TNT\",\"elementValue\":\"null\"}],\"parameter\":[{\"parameterName\":\"CITY\",\"parameterValue\":\"新北市\"},{\"parameterName\":\"CITY_SN\",\"parameterValue\":\"06\"},{\"parameterName\":\"TOWN\",\"parameterValue\":\"烏來區\"},{\"parameterName\":\"TOWN_SN\",\"parameterValue\":\"061\"}]}";
+//		GetMethod Get = new GetMethod(CreateAndUpdateUrl);
+//		JSONObject OpenDataList = Get.doGetJson_https().getJSONObject("records");
+//		JSONArray GetJsonArr_Open = OpenDataList.getJSONArray("location");
+//		for(int i=0;i<3;i++){
+//			JSONObject OpenJson = (JSONObject) GetJsonArr_Open.get(i);
+//			
+//			JSONObject OpenJson_Time = (JSONObject) OpenJson.get("time");
+//			String RST_Date = OpenJson_Time.get("obsTime").toString().split(" ")[0]+"T"+OpenJson_Time.get("obsTime").toString().split(" ")[1];
+//			JSONArray obOpen = OpenJson.getJSONArray("weatherElement");
+//			
+//			String ELEV = null;
+//			String WDIR = null;
+//			String WDSD = null;
+//			String TEMP = null;
+//			String HUMD = null;
+//			String PRES = null;
+//			String SUN = null;
+//			String H_24RNA = null;
+//			String H_FX = null;
+//			String H_XD = null;
+//			String H_FXT = null;
+//			String D_TX = null;
+//			String D_TXT = null;
+//			String D_TN = null;
+//			String D_TNT = null;
+//			
+//			for(int k=0; k<obOpen.size(); k++){
+//				JSONObject weatherElement = (JSONObject) obOpen.get(k);
+//				String obData = weatherElement.getString("elementName");
+//				switch (obData){
+//				case "ELEV":
+//					ELEV = weatherElement.getString("elementValue");
+//		            break;
+//				case "WDIR":
+//					WDIR = weatherElement.getString("elementValue");
+//		            break;
+//				case "WDSD":
+//					WDSD = weatherElement.getString("elementValue");
+//		            break;
+//				case "TEMP":
+//					TEMP = weatherElement.getString("elementValue");
+//		            break;
+//				case "HUMD":
+//					HUMD = weatherElement.getString("elementValue");
+//		            break;
+//				case "PRES":
+//					PRES = weatherElement.getString("elementValue");
+//		            break;
+//				case "SUN":
+//					SUN = weatherElement.getString("elementValue");
+//		            break;
+//				case "H_24RNA":
+//					H_24RNA = weatherElement.getString("elementValue");
+//		            break;
+//				case "H_FX":
+//					H_FX = weatherElement.getString("elementValue");
+//		            break;
+//				case "H_XD":
+//					H_XD = weatherElement.getString("elementValue");
+//		            break;
+//				case "H_FXT":
+//					H_FXT = weatherElement.getString("elementValue");
+//		            break;
+//				case "D_TX":
+//					D_TX = weatherElement.getString("elementValue");
+//		            break;
+//				case "D_TXT":
+//					D_TXT = weatherElement.getString("elementValue");
+//		            break;
+//				case "D_TN":
+//					D_TN = weatherElement.getString("elementValue");
+//		            break;
+//				case "D_TNT":
+//					D_TNT = weatherElement.getString("elementValue");
+//		            break;
+//		            }
+//			}
+//			
+//			
+//			System.out.println(OpenJson.get("stationId").toString());
+//			
+//		}
 		
 		
 		//JSONObject tmp = null;
@@ -514,5 +515,42 @@ public class ReadText {
 //			System.out.println(data);
 //		}
 		
+		//測試寫入LOG檔案
+		File FolderPath = new File("C:\\NCDR_history\\rainfall\\2018\\Rain_2018");
+		File[] listOfFiles = FolderPath.listFiles();
+//		for (File f : listOfFiles) {
+//			System.out.println(f.getPath());
+//		}
+		//System.out.println(listOfFiles[11].getPath());
+		
+		
+		String newPath = listOfFiles[11].getPath().replace(".csv", "_log.txt");
+		for(int i=0; i<5; i++){
+			FileWriter fw = new FileWriter(newPath, true);
+			fw.write("test\r\n");
+			fw.flush();
+			fw.close();
+		}
+		System.out.println(newPath);
+		
+//		//測試抓前五個
+//		JSONArray tmpArr_StidList = new GetStidJsonArray().getJsonArr();
+//		JSONObject tmp = new JSONObject();
+//		int countSTID = 0;
+//		for(int o=0;o<5;o++) {
+//			tmp = tmpArr_StidList.getJSONObject(o);
+//			//System.out.println();
+//			if("C0A56".equals(tmp.getString("STID").substring(0, 5))){
+//				countSTID++;
+//			}
+//		}
+//		if(countSTID==1){
+//			System.out.println("Yes");
+//			countSTID = 0;
+//		}
+//		else{
+//			System.out.println("No");
+//			countSTID = 0;
+//		}
 	}
 }

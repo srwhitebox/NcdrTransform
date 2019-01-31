@@ -1,5 +1,7 @@
 package com.mitac.NchcTransform.Weather;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.text.ParseException;
@@ -96,6 +98,7 @@ public class WeatherController_csv {
 		// --- add stop ---------
 		
 		int ColNum=0;
+		int countSTID=0;
 		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
 			String[] tmpSplitCol = TmpList.get(i).split(",");
 			for(int i1=0; i1<tmpSplitCol.length; i1++){
@@ -112,11 +115,20 @@ public class WeatherController_csv {
 				if(tmpSplitCol.length==ColNum) {
 					for(int o=0;o<tmpArr_StidList.size();o++) {
 						tmp = tmpArr_StidList.getJSONObject(o);
-						if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //find it, break
+						if(tmpSplitCol[1].equals(tmp.getString("STID").substring(0, 5))) { //find it, break
+							countSTID++;
+							//break;
+						}
+					}
+					for(int o=0;o<tmpArr_StidList.size();o++) {
+						tmp = tmpArr_StidList.getJSONObject(o);
+						if(tmpSplitCol[1].equals(tmp.getString("STID").substring(0, 5))) { //find it, break
+							//countSTID++;
 							break;
 						}
 					}
-					if(tmpSplitCol[1].equals(tmp.getString("STID"))) { //check again, avoid STID not found
+					//System.out.println("why========="+tmpSplitCol[1]);
+					if(countSTID==1) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");
 						String ThingName = "氣象站_old_2018-"+Stid+"-"+Stnm;
@@ -237,9 +249,24 @@ public class WeatherController_csv {
 							}
 							//System.out.println(DataStreamIdMaps);
 							// --- get datastream id end ---
+							countSTID = 0;
 						}
 					}else{
 						//System.out.println("there is no sensor");
+						String newPath = path.replace(".csv", "_log.txt");
+						FileWriter fw;
+						try {
+							fw = new FileWriter(newPath, true);
+							fw.write("Warning countSTID=" + countSTID + " STNM=" + tmp.getString("STNM") + " STID=" + tmp.getString("STID") + " CSVid=" + tmpSplitCol[1] + "\r\n");
+							fw.flush();
+							fw.close();
+							
+							countSTID = 0;
+						} catch (IOException e) {
+							// TODO Auto-generated catch block
+							e.printStackTrace();
+						}
+						
 					}
 				}
 			}

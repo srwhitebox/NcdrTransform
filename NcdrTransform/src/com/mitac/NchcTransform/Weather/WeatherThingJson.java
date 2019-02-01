@@ -58,15 +58,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-ELEV\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-ELEV\"\r\n" + 
+				"\"description\": \"NCHC-ELEV\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -85,15 +85,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WDIR\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-WDIR\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-WDIR\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -112,15 +112,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WDSD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-WDSD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-WDSD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -139,15 +139,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-TEMP\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-TEMP\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-TEMP\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -166,15 +166,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-HUMD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-HUMD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-HUMD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -193,15 +193,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-PRES\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-PRES\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-PRES\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -220,15 +220,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-24R\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-24R\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-24R\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -247,15 +247,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_FX\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_FX\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_FX\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -274,15 +274,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_XD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_XD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_XD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -301,15 +301,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_FXT\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_FXT\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_FXT\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -328,15 +328,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_F10\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_F10\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_F10\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -355,15 +355,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_10D\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_10D\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_10D\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -382,15 +382,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_F10T\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_F10T\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_F10T\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -409,15 +409,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_UVI\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_UVI\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_UVI\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -436,15 +436,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TX\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TX\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TX\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -463,15 +463,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TXT\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TXT\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TXT\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -490,15 +490,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TN\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TN\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TN\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -517,15 +517,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TNT\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TNT\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TNT\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -544,15 +544,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TS\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TS\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TS\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -571,15 +571,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_VIS\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-v\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-v\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -633,15 +633,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-ELEV\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-ELEV\"\r\n" + 
+				"\"description\": \"NCHC-ELEV\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -660,15 +660,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WDIR\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-WDIR\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-WDIR\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -687,15 +687,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WDSD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-WDSD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-WDSD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -714,15 +714,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-TEMP\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-TEMP\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-TEMP\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -741,15 +741,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-HUMD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-HUMD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-HUMD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -768,15 +768,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-PRES\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-PRES\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-PRES\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -795,15 +795,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-SUN\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-SUN\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-SUN\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -822,15 +822,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_24RNA\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_24RNA\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_24RNA\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -849,15 +849,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_FX\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_FX\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_FX\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -876,15 +876,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_XD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_XD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_XD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -903,15 +903,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_FXT\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-H_FXT\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-H_FXT\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -930,15 +930,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TX\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TX\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TX\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -957,15 +957,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TXT\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TXT\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TXT\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -984,15 +984,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TN\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TN\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TN\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1011,15 +1011,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-D_TNT\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-D_TNT\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-D_TNT\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1037,7 +1037,7 @@ public class WeatherThingJson {
 			String OB01,String OB02,String OB03,String OB04,String OB05,String OB06,String OB07,String OB08,String OB09,String OB10,
 			String OB11,String OB12,String OB13,String OB14,String OB15,String OB16,String OB17,String OB18,String OB19,String OB20){
 		PostThingObject="{\r\n" + 
-				"\"name\": \"氣象站_old_2018-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"name\": \"氣象站_old_2018_NCHC-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"氣象站-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\":\""+STID+"\",\r\n" + 
@@ -1072,15 +1072,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-風速\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-風速\"\r\n" + 
+				"\"description\": \"NCHC-風速\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1099,15 +1099,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-風向\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-風向\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-風向\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1126,15 +1126,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-濕度\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-濕度\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-濕度\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1153,15 +1153,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-氣壓\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-氣壓\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-氣壓\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1180,15 +1180,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-氣溫\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-氣溫\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-氣溫\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1207,15 +1207,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-紫外線指數\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-紫外線指數\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-紫外線指數\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1234,15 +1234,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-日累積雨量\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-日累積雨量\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-日累積雨量\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1261,15 +1261,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-日最高溫度\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-日最高溫度\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-日最高溫度\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1288,15 +1288,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-日最高溫度發生時間\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-日最高溫度發生時間\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-日最高溫度發生時間\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1315,15 +1315,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-日最低溫度\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-日最低溫度\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-日最低溫度\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1342,15 +1342,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-日最低溫度發生時間\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-日最低溫度發生時間\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-日最低溫度發生時間\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1369,15 +1369,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-日照時數\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-日照時數\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-日照時數\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1396,15 +1396,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-小時極大風速\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-小時極大風速\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-小時極大風速\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1423,15 +1423,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-小時極大風向\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-小時極大風向\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-小時極大風向\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1450,15 +1450,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-小時極大風速發生時間\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-小時極大風速發生時間\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-小時極大風速發生時間\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1477,15 +1477,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-小時最大10分鐘平均風速\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-小時最大10分鐘平均風速\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-小時最大10分鐘平均風速\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1504,15 +1504,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-小時最大10分鐘平均風向\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-小時最大10分鐘平均風向\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-小時最大10分鐘平均風向\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1531,15 +1531,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"小時最大10分鐘平均風速發生時間\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-小時最大10分鐘平均風速發生時間\"\r\n" + 
+				"\"description\": \"NCHC-小時最大10分鐘平均風速發生時間\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1558,15 +1558,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-能見度\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-能見度\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-能見度\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1585,15 +1585,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-日累積全天空日輻射\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊-日累積全天空日輻射\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊-日累積全天空日輻射\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1644,15 +1644,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-PS01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊PS01\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊PS01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1671,15 +1671,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-TX01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊TX01\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊TX01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1698,15 +1698,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-RH01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊RH01\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊RH01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1725,15 +1725,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WD01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊WD01\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊WD01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1752,15 +1752,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WD02\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊WD02\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊WD02\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1779,15 +1779,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-SS01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊SS01\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊SS01\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1838,15 +1838,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WDIR\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 WDIR\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 WDIR\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1865,15 +1865,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WDSD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 WDSD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 WDSD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1892,15 +1892,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-TEMP\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 TEMP\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 TEMP\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1919,15 +1919,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-HUMD\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 HUMD\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 HUMD\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1946,15 +1946,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-PRES\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 PRES\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 PRES\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -1973,15 +1973,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-SUN\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 SUN\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 SUN\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -2000,15 +2000,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-H_24R\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 H_24R\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 H_24R\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -2027,15 +2027,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-Elev\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 Elev\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 Elev\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -2054,15 +2054,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WS15M\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 WS15M\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 WS15M\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -2081,15 +2081,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WD15M\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 WD15M\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 WD15M\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -2108,15 +2108,15 @@ public class WeatherThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"氣象站-WS15T\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-氣象資訊 WS15T\"\r\n" + 
+				"\"description\": \"NCHC-氣象資訊 WS15T\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 

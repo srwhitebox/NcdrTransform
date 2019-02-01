@@ -55,15 +55,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-ELEV\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-ELEV\"\r\n" + 
+				"\"description\": \"NCHC-ELEV\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -82,15 +82,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-RAIN\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-雨量資訊-RAIN\"\r\n" + 
+				"\"description\": \"NCHC-雨量資訊-RAIN\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -109,15 +109,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-MIN_10\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-雨量資訊-MIN_10\"\r\n" + 
+				"\"description\": \"NCHC-雨量資訊-MIN_10\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -136,15 +136,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-HOUR_3\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-雨量資訊-HOUR_3\"\r\n" + 
+				"\"description\": \"NCHC-雨量資訊-HOUR_3\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -163,15 +163,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-HOUR_6\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-雨量資訊-HOUR_6\"\r\n" + 
+				"\"description\": \"NCHC-雨量資訊-HOUR_6\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -190,15 +190,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-HOUR_12\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-雨量資訊-HOUR_12\"\r\n" + 
+				"\"description\": \"NCHC-雨量資訊-HOUR_12\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -217,15 +217,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-HOUR_24\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-雨量資訊-HOUR_24\"\r\n" + 
+				"\"description\": \"NCHC-雨量資訊-HOUR_24\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -244,15 +244,15 @@ public class RainfallThingJson {
 				"\"definition\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR Database\",\r\n" + 
-				"\"description\": \"NCDR Database\",\r\n" + 
+				"\"name\": \"NCHC Database\",\r\n" + 
+				"\"description\": \"NCHC Database\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
 				"\"metadata\": \"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-NOW\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\": \"NCDR-雨量資訊-NOW\"\r\n" + 
+				"\"description\": \"NCHC-雨量資訊-NOW\"\r\n" + 
 				"},\r\n" + 
 				"\"Observations\": [\r\n" + 
 				"{\r\n" + 
@@ -268,7 +268,7 @@ public class RainfallThingJson {
 	
 	public void setPostThingObject_csv(String STID,String STNM,String LAT,String LON,String CityName,String City_SN,String TownName,String Town_SN,String Attribute,String Elev) {
 		PostThingObject="{\r\n" + 
-				"\"name\": \"雨量站_old_2018-"+STID+"-"+STNM+"\",\r\n" + 
+				"\"name\": \"雨量站_old_2018_NCHC-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"description\": \"雨量站-"+STID+"-"+STNM+"\",\r\n" + 
 				"\"properties\": {\r\n" + 
 				"\"stationID\":\""+STID+"\",\r\n" + 
@@ -304,15 +304,15 @@ public class RainfallThingJson {
 				"\"definition\":\"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR DataBase\",\r\n" + 
-				"\"description\": \"NCDR DataBase\",\r\n" + 
+				"\"name\": \"NCHC DataBase\",\r\n" + 
+				"\"description\": \"NCHC DataBase\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NCDR DataBase\"\r\n" + 
+				"\"metadata\": \"NCHC DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-DD_RMN\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-DD_RMN\"\r\n" + 
+				"\"description\":\"NCHC-DD_RMN\"\r\n" + 
 				"}"+ 
 				"}\r\n" + 
 				"]\r\n" + 
@@ -357,15 +357,15 @@ public class RainfallThingJson {
 				"\"definition\":\"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR DataBase\",\r\n" + 
-				"\"description\": \"NCDR DataBase\",\r\n" + 
+				"\"name\": \"NCHC DataBase\",\r\n" + 
+				"\"description\": \"NCHC DataBase\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NCDR DataBase\"\r\n" + 
+				"\"metadata\": \"NCHC DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-PP01\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-降水量\"\r\n" + 
+				"\"description\":\"NCHC-降水量\"\r\n" + 
 				"}"+ 
 				"}\r\n" + 
 				"]\r\n" + 
@@ -410,15 +410,15 @@ public class RainfallThingJson {
 				"\"definition\":\"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR DataBase\",\r\n" + 
-				"\"description\": \"NCDR DataBase\",\r\n" + 
+				"\"name\": \"NCHC DataBase\",\r\n" + 
+				"\"description\": \"NCHC DataBase\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NCDR DataBase\"\r\n" + 
+				"\"metadata\": \"NCHC DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-Hour_1\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-1小時雨量資訊\"\r\n" + 
+				"\"description\":\"NCHC-1小時雨量資訊\"\r\n" + 
 				"}"+ 
 				"},\r\n" + 
 				"{\r\n" + 
@@ -431,15 +431,15 @@ public class RainfallThingJson {
 				"\"definition\":\"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR DataBase\",\r\n" + 
-				"\"description\": \"NCDR DataBase\",\r\n" + 
+				"\"name\": \"NCHC DataBase\",\r\n" + 
+				"\"description\": \"NCHC DataBase\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NCDR DataBase\"\r\n" + 
+				"\"metadata\": \"NCHC DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-Hour_3\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-3小時雨量資訊\"\r\n" + 
+				"\"description\":\"NCHC-3小時雨量資訊\"\r\n" + 
 				"}"+
 				"},\r\n" + 
 				"{\r\n" + 
@@ -452,15 +452,15 @@ public class RainfallThingJson {
 				"\"definition\":\"NA\"\r\n" + 
 				"},\r\n" + 
 				"\"Sensor\": {\r\n" + 
-				"\"name\": \"NCDR DataBase\",\r\n" + 
-				"\"description\": \"NCDR DataBase\",\r\n" + 
+				"\"name\": \"NCHC DataBase\",\r\n" + 
+				"\"description\": \"NCHC DataBase\",\r\n" + 
 				"\"encodingType\": \"application/pdf\",\r\n" + 
-				"\"metadata\": \"NCDR DataBase\"\r\n" + 
+				"\"metadata\": \"NCHC DataBase\"\r\n" + 
 				"},\r\n" + 
 				"\"ObservedProperty\": {\r\n" + 
 				"\"name\": \"雨量站-Hour_24\",\r\n" + 
 				"\"definition\": \"NA\",\r\n" + 
-				"\"description\":\"NCDR-24小時雨量資訊\"\r\n" + 
+				"\"description\":\"NCHC-24小時雨量資訊\"\r\n" + 
 				"}"+ 
 				"}\r\n" + 
 				"]\r\n" + 

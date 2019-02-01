@@ -515,23 +515,23 @@ public class ReadText {
 //			System.out.println(data);
 //		}
 		
-		//測試寫入LOG檔案
-		File FolderPath = new File("C:\\NCDR_history\\rainfall\\2018\\Rain_2018");
-		File[] listOfFiles = FolderPath.listFiles();
-//		for (File f : listOfFiles) {
-//			System.out.println(f.getPath());
+//		//測試寫入LOG檔案
+//		File FolderPath = new File("C:\\NCDR_history\\rainfall\\2018\\Rain_2018");
+//		File[] listOfFiles = FolderPath.listFiles();
+////		for (File f : listOfFiles) {
+////			System.out.println(f.getPath());
+////		}
+//		//System.out.println(listOfFiles[11].getPath());
+//		
+//		
+//		String newPath = listOfFiles[11].getPath().replace(".csv", "_log.txt");
+//		for(int i=0; i<5; i++){
+//			FileWriter fw = new FileWriter(newPath, true);
+//			fw.write("test\r\n");
+//			fw.flush();
+//			fw.close();
 //		}
-		//System.out.println(listOfFiles[11].getPath());
-		
-		
-		String newPath = listOfFiles[11].getPath().replace(".csv", "_log.txt");
-		for(int i=0; i<5; i++){
-			FileWriter fw = new FileWriter(newPath, true);
-			fw.write("test\r\n");
-			fw.flush();
-			fw.close();
-		}
-		System.out.println(newPath);
+//		System.out.println(newPath);
 		
 //		//測試抓前五個
 //		JSONArray tmpArr_StidList = new GetStidJsonArray().getJsonArr();
@@ -552,5 +552,12 @@ public class ReadText {
 //			System.out.println("No");
 //			countSTID = 0;
 //		}
+		
+		int countSTID=0;
+		for(int i=0; i<5; i++){
+			if(i<3)
+				countSTID++;
+		}
+		System.out.println(countSTID);
 	}
 }

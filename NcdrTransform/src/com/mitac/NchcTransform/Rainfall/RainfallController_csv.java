@@ -101,6 +101,7 @@ public class RainfallController_csv {
 		
 		int ColNum=0;
 		int countSTID=0;
+		//int indexThing=0;
 		for(int i=0;i<TmpList.size();i++) {//TmpList.size()
 			String[] tmpSplitCol = TmpList.get(i).split(",");
 			for(int i1=0; i1<tmpSplitCol.length; i1++){
@@ -119,9 +120,14 @@ public class RainfallController_csv {
 						tmp = tmpArr_StidList.getJSONObject(o);
 						if(tmpSplitCol[1].equals(tmp.getString("STID").substring(0, 5))) { //find it, break
 							countSTID++;
+							//indexThing = o;
 							//break;
 						}
 					}
+					
+//					//判斷tmp是哪個JSONObject
+//					tmp = tmpArr_StidList.getJSONObject(indexThing);
+					
 					for(int o=0;o<tmpArr_StidList.size();o++) {
 						tmp = tmpArr_StidList.getJSONObject(o);
 						if(tmpSplitCol[1].equals(tmp.getString("STID").substring(0, 5))) { //find it, break
@@ -133,7 +139,7 @@ public class RainfallController_csv {
 					if(countSTID==1) { //check again, avoid STID not found
 						String Stid = tmp.getString("STID");
 						String Stnm = tmp.getString("STNM");
-						String ThingName = "雨量站_old_2018-"+Stid+"-"+Stnm;
+						String ThingName = "雨量站_old_2018_NCHC-"+Stid+"-"+Stnm;
 						//System.out.println(ThingName);
 						try {
 							ThingName = URLEncoder.encode(ThingName,"UTF-8");
